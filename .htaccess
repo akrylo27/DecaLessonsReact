@@ -1,0 +1,4 @@
+PassengerNodejs /home/l/lomontin/.local/bin/node
+PassengerAppRoot /home/l/lomontin/dless.ru/public_html
+PassengerAppType node
+PassengerStartupFile server.js
