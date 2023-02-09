@@ -20,6 +20,7 @@ export default function Home() {
             Test deploy dless.ru Get started by editing&nbsp;
             <code className={styles.code}>pages/index.js</code>
           </p>
+          <p>Hello world</p>
           <div>
             <a
               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
