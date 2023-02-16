@@ -39,7 +39,7 @@ export default function Player() {
 			m = Math.floor(dm / 60),
 			ds = dm % 60,
 			s = Math.ceil(ds),
-			fulltime;
+			fullTime;
 		if (s === 60) {
 			s = 0;
 			m = m + 1;
@@ -55,11 +55,11 @@ export default function Player() {
 			m = '0' + m;
 		}
 		if (h === 0) {
-			fulltime = m + ':' + s;
+			fullTime = m + ':' + s;
 		} else {
-			fulltime = h + ':' + m + ':' + s;
+			fullTime = h + ':' + m + ':' + s;
 		}
-		return fulltime;
+		return fullTime;
 	};
 
 	return (
