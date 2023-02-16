@@ -11,28 +11,33 @@ export default function Player() {
     setAudio(new Audio('/audio/test.mp3'));
   }, []);
 
+  const audioTimeUpdate = () => {
+    audio.addEventListener('timeupdate', () => {
+      let pr = (audio.currentTime / audio.duration) * 100;
+      setfullTime(getTimerMusic(audio.duration));
+      setCurrentTime(getTimerMusic(audio.currentTime));
+      setPercentage(pr);
+
+      if (pr >= 100) {
+        audio.currentTime = 0;
+        audio.pause();
+        setIsPlay(true);
+      }
+    });
+  }
+
   const play = () => {
     setIsPlay(!isPlay);
+
     if (isPlay) {
-      audio.addEventListener('timeupdate', () => {
-        let pr = (audio.currentTime / audio.duration) * 100;
-        setfullTime(getTimerMusic(audio.duration));
-        setCurrentTime(getTimerMusic(audio.currentTime));
-        setPercentage(pr);
-
-        if (pr >= 100) {
-          audio.currentTime = 0;
-          audio.pause();
-          setIsPlay(true);
-        }
-      });
-
+      audioTimeUpdate()
       audio.play();
       return;
     }
 
     audio.pause();
   };
+
   const getTimerMusic = (time) => {
     let h = Math.floor(time / (60 * 60)),
       dm = time % (60 * 60),
@@ -62,10 +67,30 @@ export default function Player() {
     return fullTime;
   };
 
+  const rewind = (e) => {
+    const rect = e.target.getBoundingClientRect()
+    const pageX = e.pageX
+    const rewind = pageX / rect.width * audio.duration
+
+    audio.currentTime = rewind
+    audioTimeUpdate()
+  }
+
+  useEffect(() => {
+    const keyCode = (e) => {
+      if ( e.keyCode === 32 ) {
+        play()
+      }
+    }
+
+    document.addEventListener('keydown', keyCode)
+    return () => document.removeEventListener('keydown', keyCode)
+  }, [audio, isPlay])
+
   return (
     <>
       <div className='player'>
-        <div className='player-bar'>
+        <div className='player-bar' onClick={rewind}>
           <div className='player-bar__progress'>
             <style jsx>{`
               .player-bar__progress {
@@ -79,9 +104,9 @@ export default function Player() {
           <div className='player-box'>
             <div className={`player-box__play ${!isPlay ? 'active' : ''}`} onClick={play}></div>
             <div className='player-box__body'>
-              <strong>Author</strong> - names
+              <strong>SNBRN & Autograf feat. Kole</strong> - Move All Night
               <span>
-                {currentTime} - {fullTime}
+                {currentTime} / {fullTime}
               </span>
             </div>
           </div>
