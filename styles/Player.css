@@ -18,12 +18,16 @@
 .player-box__play {
   width: 40px;
   height: 40px;
-  border: 1px solid #674FE7;
+  border: 1px solid var(--player-color-two);;
   border-radius: 50%;
   box-sizing: border-box;
   cursor: pointer;
   margin-right: 15px;
   position: relative;
+}
+
+.player-box__play:hover {
+  BOX-SHADOW: 0 0 10px var(--player-color-two);;
 }
 
 .player-box__play:before {
@@ -36,7 +40,7 @@
   bottom: 0;
   left: 2px;
   right: 0;
-  border-left:8px solid #674FE7;
+  border-left: 8px solid var(--player-color-two);;
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
 }
@@ -45,13 +49,18 @@
   border: none;
   width: 10px;
   height: 10px;
-  background: #674FE7;
+  background: var(--player-color-two);
   left: 0;
 }
 
 .player-box__body {
   font-size: 16px;
   line-height: 1.3;
+  color: rgba(0,0,0,.5)
+}
+
+.player-box__body strong {
+  color: rgba(0,0,0,.8)
 }
 
 .player-box__body span {
@@ -61,21 +70,39 @@
 
 .player-bar {
   position: absolute;
-  top: 0;
+  bottom: 100%;
   left: 0;
   right: 0;
-  background: #ccc;
+  background: rgba(0,0,0,.07);
+  cursor: pointer;
 }
 
 .player-bar__progress {
   width: 0;
-  background: linear-gradient(to left, #674FE7, #CE4FE7);
+  background: linear-gradient(to left, var(--player-color-one), var(--player-color-two));
   height: 3px;
+  pointer-events: none;
+  transition: height .1s;
+}
+
+.player-bar:hover .player-bar__progress {
+  height: 8px;
 }
 
 @media (prefers-color-scheme: dark) {
-  .player,
-  .player-bar {
+  .player {
     background: rgba(255,255,255,.1);
+  }
+
+  .player-box__body {
+    color: rgba(255,255,255,.5)
+  }
+
+  .player-box__body strong {
+    color: rgba(255,255,255,.8)
+  }
+
+  .player-bar {
+    background: rgba(255,255,255,.2);
   }
 }
