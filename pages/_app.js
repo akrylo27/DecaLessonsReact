@@ -1,5 +1,6 @@
-import '@/styles/scss/globals.css'
+import '@/styles/sass/globals.scss';
+import '@/styles/sass/Player.scss';
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }
