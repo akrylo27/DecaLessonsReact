@@ -1,7 +1,7 @@
 :root {
   --foreground-rgb: 0, 0, 0;
-  --player-color-one: #0A7FAA;
-  --player-color-two: #0E3EFA;
+  --player-color-one: #FF5D0F;
+  --player-color-two: #FF9C0F;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +24,8 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
+  border-top: 3px solid var(--player-color-one);
+  font-family: Arial, sans-serif;
 }
 
 a {

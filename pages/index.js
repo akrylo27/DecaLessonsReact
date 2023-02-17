@@ -2,6 +2,13 @@ import Head from 'next/head';
 import Player from '@/components/player';
 
 export default function Home() {
+  const track = {
+    id: 1,
+    author: 'breathe.',
+    name: 'Are You All Good',
+    src: '/audio/breathe.mp3'
+  }
+
   return (
     <>
       <Head>
@@ -11,7 +18,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Player />
+      <Player track={track} />
     </>
   );
 }
