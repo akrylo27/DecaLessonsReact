@@ -7,6 +7,9 @@
   background: rgba(255,255,255,.7);
   backdrop-filter: blur(10px);
   font-family: Arial, sans-serif;
+  &:hover .player-bar__progress {
+    height: 8px;
+  }
 }
 
 .player-box {
@@ -75,9 +78,6 @@
     height: 3px;
     pointer-events: none;
     transition: height .1s;
-  }
-  &:hover .player-bar__progress {
-    height: 8px;
   }
 }
 
