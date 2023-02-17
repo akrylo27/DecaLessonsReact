@@ -24,13 +24,13 @@ export default function Player({ track }) {
         setIsPlay(true);
       }
     });
-  }
+  };
 
   const play = () => {
     setIsPlay(!isPlay);
 
     if (isPlay) {
-      audioTimeUpdate()
+      audioTimeUpdate();
       audio.play();
       return;
     }
@@ -39,53 +39,54 @@ export default function Player({ track }) {
   };
 
   const getTimerMusic = (time) => {
-    let h = Math.floor(time / (60 * 60)),
-      dm = time % (60 * 60),
-      m = Math.floor(dm / 60),
-      ds = dm % 60,
-      s = Math.ceil(ds),
+    let hour = Math.floor(time / (60 * 60)),
+      resultMinutes = time % (60 * 60),
+      minute = Math.floor(resultMinutes / 60),
+      resultSeconds = resultMinutes % 60,
+      second = Math.ceil(resultSeconds),
       fullTime;
-    if (s === 60) {
-      s = 0;
-      m = m + 1;
+
+    if (second === 60) {
+      second = 0;
+      minute = minute + 1;
     }
-    if (s < 10) {
-      s = '0' + s;
+    if (second < 10) {
+      second = '0' + second;
     }
-    if (m === 60) {
-      m = 0;
-      h = h + 1;
+    if (minute === 60) {
+      minute = 0;
+      hour = hour + 1;
     }
-    if (m < 10) {
-      m = '0' + m;
+    if (minute < 10) {
+      minute = '0' + minute;
     }
-    if (h === 0) {
-      fullTime = m + ':' + s;
+    if (hour === 0) {
+      fullTime = minute + ':' + second;
     } else {
-      fullTime = h + ':' + m + ':' + s;
+      fullTime = hour + ':' + minute + ':' + second;
     }
     return fullTime;
   };
 
   const rewind = (e) => {
-    const rect = e.target.getBoundingClientRect()
-    const pageX = e.pageX
-    const rewind = pageX / rect.width * audio.duration
+    const rect = e.target.getBoundingClientRect();
+    const pageX = e.pageX;
+    const rewind = (pageX / rect.width) * audio.duration;
 
-    audio.currentTime = rewind
-    audioTimeUpdate()
-  }
+    audio.currentTime = rewind;
+    audioTimeUpdate();
+  };
 
   useEffect(() => {
     const keyCode = (e) => {
-      if ( e.keyCode === 32 ) {
-        play()
+      if (e.keyCode === 32) {
+        play();
       }
-    }
+    };
 
-    document.addEventListener('keydown', keyCode)
-    return () => document.removeEventListener('keydown', keyCode)
-  }, [audio, isPlay])
+    document.addEventListener('keydown', keyCode);
+    return () => document.removeEventListener('keydown', keyCode);
+  }, [audio, isPlay]);
 
   return (
     <>
