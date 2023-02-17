@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function Player() {
+export default function Player({ track }) {
   const [audio, setAudio] = useState(null);
   const [isPlay, setIsPlay] = useState(true);
   const [percentage, setPercentage] = useState(0);
@@ -8,7 +8,7 @@ export default function Player() {
   const [currentTime, setCurrentTime] = useState('00:00');
 
   useEffect(() => {
-    setAudio(new Audio('/audio/test.mp3'));
+    setAudio(new Audio(track.src));
   }, []);
 
   const audioTimeUpdate = () => {
@@ -104,7 +104,7 @@ export default function Player() {
           <div className='player-box'>
             <div className={`player-box__play ${!isPlay ? 'active' : ''}`} onClick={play}></div>
             <div className='player-box__body'>
-              <strong>SNBRN & Autograf feat. Kole</strong> - Move All Night
+              <strong>{track.author}</strong> - {track.name}
               <span>
                 {currentTime} / {fullTime}
               </span>
