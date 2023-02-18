@@ -23,19 +23,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Player track={track} />
 
-      <Form method={"GET"} name={"defForm"}>
-        <Label htmlFor={"firstName"} value={"Имя"} />
-        <Input type={"text"} name={"firstName"} placeholder={"введите имя"} />
-        <Label htmlFor={"secondName"} value={"Фамилия"} />
-        <Input
-          type={"text"}
-          name={"secondName"}
-          placeholder={"введите фамилию"}
-        />
-        <Button value={"кнопка"} />
+      {/* Тестовая форма */}
+      <Form method={"GET"} name={"myForm"}>
+        <Label htmlFor={"firstName"} value={"лейбл1"} />
+        <Input type={"text"} name={"firstName"} placeholder={"инпут1"} />
+        <Label htmlFor={"secondName"} value={"лейбл2"} />
+        <Input type={"text"} name={"secondName"} placeholder={"инпут2"} />
+        <Button />
       </Form>
     </>
   )

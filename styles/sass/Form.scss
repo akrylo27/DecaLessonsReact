@@ -1,10 +1,30 @@
-/* .form-wrapper {
-  margin: 0 auto;
+.form-wrapper {
+  margin: 100px auto;
+  padding: 50px 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  width: 500px;
-  height: 250px;
-} */
+  width: 450px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.8);
+  flex-wrap: nowrap;
+  border-radius: 10px;
+}
+
+.label-props {
+  font-size: 25px;
+  text-align: center;
+  margin: 10px;
+}
+
+.btn-props {
+  margin: 25px auto 0;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.input-props {
+  margin: 0 auto;
+  width: 70%;
+  height: 50px;
+}
