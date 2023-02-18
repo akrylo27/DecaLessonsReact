@@ -110,7 +110,7 @@ export default function Player({ track }) {
             <div className="player-box__body">
               <strong>{track.author}</strong> - {track.name}
               <span>
-                {currentTime} dsdsds/ {fullTime}
+                {currentTime} / {fullTime}
               </span>
             </div>
           </div>

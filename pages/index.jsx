@@ -1,6 +1,9 @@
 import Head from "next/head"
 import Player from "@/components/player"
-import Form from "@/components/Form"
+import Form from "@/components/form/Form"
+import Label from "@/components/form/Label"
+import Input from "@/components/form/Input"
+import Button from "@/components/form/Button"
 
 export default function Home() {
   const track = {
@@ -22,7 +25,18 @@ export default function Home() {
       </Head>
 
       <Player track={track} />
-      <Form />
+
+      <Form method={"GET"} name={"defForm"}>
+        <Label htmlFor={"firstName"} value={"Имя"} />
+        <Input type={"text"} name={"firstName"} placeholder={"введите имя"} />
+        <Label htmlFor={"secondName"} value={"Фамилия"} />
+        <Input
+          type={"text"}
+          name={"secondName"}
+          placeholder={"введите фамилию"}
+        />
+        <Button value={"кнопка"} />
+      </Form>
     </>
   )
 }
