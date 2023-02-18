@@ -8,7 +8,7 @@ function Form(props) {
 
   return (
     <>
-      {/* Создаётся форма и передаёт туда свои дочерние элементы */}
+      {/* Создаётся форма с дочерними элементами */}
       <form className="form-wrapper" onSubmit={handleSubmit}>
         {props.children}
       </form>
