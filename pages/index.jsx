@@ -21,6 +21,7 @@ export default function Home() {
       </Head>
       <Player track={track} />
       <Button text={'text'} type={'submit'} style={'normal'} />
+      <Button text={'text'} type={'button'} style={'orange'} />
     </>
   );
 }

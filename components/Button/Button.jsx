@@ -9,8 +9,12 @@ const Button = ({ text, type, style, ...props }) => {
             {text}
           </button>
         );
-      case 'gray':
-        return '';
+      case 'orange':
+        return (
+          <button className='button button__orange' type={type} {...props}>
+            {text}
+          </button>
+        );
     }
   };
 
