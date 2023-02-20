@@ -1,15 +1,15 @@
-import React from "react"
+import React, { useState } from "react"
 
 function Form(props) {
   //Функция отправки формы
-  const handleSubmit = () => {
+  const handleFormSubmit = () => {
     console.log("Форма отправилась")
   }
 
   return (
     <>
       {/* Создаётся форма с дочерними элементами */}
-      <form className="form-wrapper" onSubmit={handleSubmit}>
+      <form className="form-wrapper" onSubmit={handleFormSubmit}>
         {props.children}
       </form>
     </>

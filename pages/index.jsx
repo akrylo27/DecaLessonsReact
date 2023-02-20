@@ -31,7 +31,9 @@ export default function Home() {
         <Input type={"text"} name={"firstName"} placeholder={"инпут1"} />
         <Label htmlFor={"secondName"} value={"лейбл2"} />
         <Input type={"text"} name={"secondName"} placeholder={"инпут2"} />
-        <Button />
+        <Label htmlFor={"thirdName"} value={"лейбл3"} />
+        <Input type={"text"} name={"secondName"} placeholder={"инпут3"} />
+        <Button isClick={true} />
       </Form>
     </>
   )

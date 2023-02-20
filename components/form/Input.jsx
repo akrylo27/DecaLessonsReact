@@ -8,7 +8,6 @@ function Input({ type, name, placeholder }) {
     console.log(event.target.value)
     setValue(event.target.value)
   }
-
   //Возвращаем контролируемый инпут, но пока никуда не сохраняем значение
 
   return (
