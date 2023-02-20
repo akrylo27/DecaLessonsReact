@@ -1,8 +1,4 @@
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --player-color-one: #ff5d0f;
-  --player-color-one-light: #fff4ee;
-  --player-color-two: #ff9c0f;
   --form-color-green: #1a7d36;
   --form-color-blue: #1e0bd0;
   --form-color-grey: #6e6e6e;
@@ -30,8 +26,8 @@
 //* Свойства формы
 .form-wrapper {
   position: relative;
-  margin: 100px auto;
-  padding: 50px 0;
+  margin: 10px auto;
+  padding: 10px 0;
   display: flex;
   flex-direction: column;
   width: auto;
@@ -89,7 +85,6 @@
   color: black;
   background: var(--player-color-two);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   &:hover,
   &:focus {
     border: 1px solid;
@@ -122,6 +117,15 @@
   }
 }
 .input-size {
+  &_range {
+    width: 80px;
+  }
+  &_xs {
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    border: 1px solid;
+  }
   &_sm {
     width: 200px;
     height: 10px;

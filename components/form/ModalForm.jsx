@@ -43,36 +43,90 @@ function ModalForm(props) {
       <div>
         <Input
           type={"text"}
-          name={"thirdName"}
+          name={"firstName"}
           placeholder={"Type something..."}
           color={"success"}
           variant={"outlined"}
           size={"xg"}
         />
         <Input
-          type={"text"}
+          type={"email"}
+          name={"secondName"}
+          placeholder={"Type email..."}
+          color={"primary"}
+          variant={"outlined"}
+          size={"lg"}
+        />
+        <Input
+          type={"password"}
           name={"thirdName"}
-          placeholder={"Type something..."}
+          placeholder={"Type password..."}
           color={"primary"}
           variant={"outlined"}
           size={"lg"}
         />
         <Input
           type={"text"}
-          name={"thirdName"}
-          placeholder={"Type something..."}
-          color={"info"}
-          variant={"outlined"}
-          size={"md"}
-        />
-        <Input
-          type={"text"}
-          name={"thirdName"}
-          placeholder={"Type something..."}
+          name={"text"}
+          placeholder={"Warning"}
           color={"danger"}
           variant={"outlined"}
           size={"sm"}
         />
+        <div>
+          <Input
+            type={"checkbox"}
+            name={"checkbox"}
+            color={"info"}
+            variant={"outlined"}
+            size={"xs"}
+          />
+          <Input
+            type={"checkbox"}
+            name={"checkbox"}
+            color={"info"}
+            variant={"outlined"}
+            size={"xs"}
+          />
+          <Input
+            type={"radio"}
+            name={"radio"}
+            color={"info"}
+            variant={"outlined"}
+            size={"xs"}
+          />
+          <Input
+            type={"radio"}
+            name={"radio"}
+            color={"info"}
+            variant={"outlined"}
+            size={"xs"}
+          />
+          <Input
+            type={"range"}
+            name={"range"}
+            color={"info"}
+            variant={"outlined"}
+            size={"range"}
+          />
+        </div>
+        <div>
+          <Input
+            type={"date"}
+            name={"date"}
+            color={"info"}
+            variant={"outlined"}
+            size={"md"}
+          />
+
+          <Input
+            type={"file"}
+            name={"file"}
+            color={"info"}
+            variant={"outlined"}
+            size={"sm"}
+          />
+        </div>
       </div>
 
       {/* //* Buttons */}
