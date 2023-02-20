@@ -3,6 +3,7 @@
   --player-color-one: #ff5d0f;
   --player-color-one-light: #fff4ee;
   --player-color-two: #ff9c0f;
+  --player-color-three: rgb(70, 15, 0);
 }
 
 .form-wrapper {
@@ -15,8 +16,8 @@
   min-height: 350px;
   background: linear-gradient(
     var(--player-color-one),
-    35%,
-    var(--player-color-two)
+    60%,
+    var(--player-color-three)
   );
 
   flex-wrap: nowrap;
@@ -24,14 +25,16 @@
   border: 2px solid black;
 }
 
-.label-props {
+.label {
+  color: var(--player-color-one-light);
   font-size: 25px;
   text-align: center;
-  margin: 10px;
+  margin: 18px auto;
 }
 
-.input-props {
+.input {
   margin: 0 auto;
+  padding: 10px;
   width: 90%;
   height: auto;
   min-height: 40px;
@@ -41,9 +44,13 @@
   border: none;
   border-radius: 10px;
   box-shadow: inset 1px 1px 3px -1px rgba(0, 0, 0, 0.8);
+  &:hover,
+  &:focus {
+    transition: all 1s;
+  }
 }
 
-.btn-props {
+.btn {
   margin: 40px auto 0;
   width: 100px;
   height: 50px;
@@ -51,4 +58,10 @@
   background-color: var(--player-color-one);
   border: none;
   border-radius: 30px;
+  &:hover,
+  &:active,
+  &:focus {
+    transition: all 0.8s ease;
+    transform: scale3d(1.1, 1.1, 0.2);
+  }
 }

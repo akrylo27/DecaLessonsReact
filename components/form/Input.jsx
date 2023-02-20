@@ -16,7 +16,7 @@ function Input({ type, name, placeholder }) {
         type={type}
         name={name}
         placeholder={placeholder}
-        className="input-props"
+        className="input input-props"
         value={value}
         onChange={handleChange}
       />
