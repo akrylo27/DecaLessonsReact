@@ -1,6 +1,6 @@
 import React from "react"
 
-function Label({ value, htmlFor }) {
+function Label({ value }) {
   return (
     <>
       {/* Дочерний элемент label принимает либо пропс либо выведет пустую строку */}

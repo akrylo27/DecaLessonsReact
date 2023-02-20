@@ -34,20 +34,67 @@
 }
 
 .input {
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 10px;
   width: 90%;
   height: auto;
   min-height: 40px;
-  font-size: 18px;
+  font-size: 15px;
   color: black;
-  background: var(--player-color-one-light);
+  background: var(--player-color-two);
   border: none;
   border-radius: 10px;
   box-shadow: inset 1px 1px 3px -1px rgba(0, 0, 0, 0.8);
   &:hover,
   &:focus {
     transition: all 1s;
+  }
+}
+
+.input-color {
+  &_success {
+    color: #1a7d36;
+  }
+  &_primary {
+    color: rgba(0, 0, 162, 0.777);
+  }
+  &_info {
+    color: rgb(144, 144, 144);
+  }
+  &_danger {
+    color: rgba(201, 0, 0, 0.837);
+  }
+}
+
+.input-variant {
+  &_outlined {
+    background: var(--player-color-one-light);
+  }
+}
+.input-size {
+  &_sm {
+    width: 200px;
+    height: 10px;
+    font-size: 15px;
+    border: 2px solid;
+  }
+  &_md {
+    width: 250px;
+    height: 20px;
+    font-size: 25px;
+    border: 2px solid;
+  }
+  &_lg {
+    width: 300px;
+    height: 50px;
+    font-size: 35px;
+    border: 2px solid;
+  }
+  &_xg {
+    width: 400px;
+    height: 70px;
+    font-size: 45px;
+    border: 2px solid;
   }
 }
 
