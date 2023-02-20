@@ -7,6 +7,7 @@
 }
 
 .form-wrapper {
+  position: relative;
   margin: 100px auto;
   padding: 50px 0;
   display: flex;
@@ -63,5 +64,22 @@
   &:focus {
     transition: all 0.8s ease;
     transform: scale3d(1.1, 1.1, 0.2);
+  }
+}
+
+.form-close {
+  &_one,
+  &_two {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    border: 1.5px solid var(--player-color-three);
+    width: 20px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  &_two {
+    transform: rotate(-45deg);
   }
 }
