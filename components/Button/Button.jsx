@@ -8,7 +8,7 @@ const Button = ({ text, type, style, link, ...props }) => {
           return (
             <a href={link}>
               <button className='button button__grey' type={type} {...props}>
-                {text}
+                <p>{text}</p>
               </button>
             </a>
           );
@@ -24,7 +24,7 @@ const Button = ({ text, type, style, link, ...props }) => {
           return (
             <a href={link}>
               <button className='button button__orange' type={type} {...props}>
-                {text}
+                <p>{text}</p>
               </button>
             </a>
           );
@@ -40,7 +40,7 @@ const Button = ({ text, type, style, link, ...props }) => {
           return (
             <a href={link}>
               <button className='button' type={type} {...props}>
-                {text}
+                <p>{text}</p>
               </button>
             </a>
           );

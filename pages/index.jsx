@@ -23,6 +23,12 @@ export default function Home() {
       <Button text={'text'} type={'submit'} style={'grey'} />
       <Button text={'text'} type={'button'} style={'orange'} />
       <Button text={'link'} type={'button'} link={'https://ya.ru/'} />
+      <Button
+        text={'link'}
+        type={'submit'}
+        style={'orange'}
+        link={'https://ya.ru/'}
+      />
     </>
   );
 }
