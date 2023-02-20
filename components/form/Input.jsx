@@ -17,7 +17,7 @@ function Input({ type, name, placeholder, color, variant, size }) {
         type={type}
         name={name}
         placeholder={placeholder}
-        className={`input input-color_${color} input-variant_${variant} input-size_${size}`}
+        className={`input input-color_${color} input-variant_${variant} input-size_${size} input-placeholder_${placeholder}`}
         value={value}
         onChange={handleChange}
       />

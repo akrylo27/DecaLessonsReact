@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-function Button(props) {
+function Button({ color, variant, size }) {
   // Функция, которая по клику будет отправлять нужный запрос
   const handleClick = () => {
     console.log("Функция сработала")
@@ -10,7 +10,10 @@ function Button(props) {
 
   return (
     <>
-      <button className="btn" onClick={handleClick}>
+      <button
+        className={`btn btn-color_${color} btn-variant_${variant} btn-size_${size}`}
+        onClick={handleClick}
+      >
         нажать
       </button>
     </>

@@ -1,10 +1,12 @@
 import React from "react"
 
-function Label({ value }) {
+function Label({ value, color, fz }) {
   return (
     <>
       {/* Дочерний элемент label принимает либо пропс либо выведет пустую строку */}
-      <label className="label label-props">{value}</label>
+      <label className={`label label-color_${color} label-fz_${fz}`}>
+        {value}
+      </label>
     </>
   )
 }
