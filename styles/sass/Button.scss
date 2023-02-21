@@ -6,8 +6,10 @@
   border: 2px solid white;
   box-shadow: none;
   border-style: outset;
+  
+  &__default{
   background-color: var(--button-color-default);
-
+  }
   cursor: pointer;
   p {
     font-family: inherit;

@@ -18,7 +18,8 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Player track={track} />
-      <Button text={'text'} type={'submit'} style={'grey'} />
+
+      <Button />
       <Button text={'text'} type={'button'} style={'orange'} />
       <Button text={'link'} type={'button'} link={'https://ya.ru/'} />
       <Button

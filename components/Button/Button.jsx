@@ -1,7 +1,13 @@
 import Link from 'next/link';
 import React from 'react';
 
-const Button = ({ text, type, style, link, ...props }) => {
+const Button = ({
+  text = 'default',
+  type = 'button',
+  style = 'default',
+  link,
+  ...props
+}) => {
   const renderSwitchButton = (style, link) => {
     if (link) {
       return (
