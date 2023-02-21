@@ -21,13 +21,13 @@ export default function Home() {
 
       <Button />
       <Button text={'text'} type={'button'} style={'orange'} />
-      <Button text={'link'} type={'button'} link={'https://ya.ru/'} />
       <Button
         text={'link'}
-        type={'submit'}
+        type={'button'}
         style={'grey'}
         link={'https://ya.ru/'}
       />
+      <Button text={'link'} type={'submit'} link={'https://ya.ru/'} />
     </>
   );
 }
