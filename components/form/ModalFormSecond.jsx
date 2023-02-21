@@ -2,13 +2,16 @@ import React, { useState } from "react"
 import Label from "./Label"
 import Input from "./Input"
 import Button from "./Button"
+import Closer from "./Closer"
 
-function ModalFormSecond({ status, value }) {
-  const [isValue, setIsValue] = useState("Введите текст")
-  const [isChecked, setIsChecked] = useState(false)
+function ModalFormSecond({ status, label, value }) {
+  const [isClose, setIsClose] = useState(false)
+  const [isValue, setIsValue] = useState(value)
+  const [checked, setChecked] = useState(true)
+  const [isRadio, setIsRadio] = useState("1")
 
-  const handleChecked = () => {
-    setIsChecked(!isChecked)
+  const handleCloseForm = () => {
+    setIsClose({ isClose })
   }
 
   const handleChange = (event) => {
@@ -16,13 +19,16 @@ function ModalFormSecond({ status, value }) {
     setIsValue(event.target.value)
   }
 
-  return status !== "" ? (
+  const changeRadio = (event) => {
+    setIsRadio(event.target.value)
+  }
+  return !isClose ? (
     <div className="form-wrapper">
       {/* //* Labels */}
+      <Closer close={handleCloseForm} />
       <div>
-        <Label htmlFor={value} value={value} fz={"xg"} color={status} />
+        <Label htmlFor={label} value={label} fz={"xg"} color={status} />
       </div>
-
       {/* //* Inputs */}
       <div>
         <Input
@@ -66,9 +72,7 @@ function ModalFormSecond({ status, value }) {
           onChange={handleChange}
         />
       </div>
-
       {/* //* Buttons */}
-
       <div>
         <Input
           type={"checkbox"}
@@ -76,10 +80,10 @@ function ModalFormSecond({ status, value }) {
           color={status}
           variant={"outlined"}
           size={"xs"}
-          value={isValue}
-          onChange={handleChange}
-          checked={isChecked}
-          onChecked={handleChecked}
+          checked={checked}
+          onChange={() => {
+            setChecked(!checked)
+          }}
         />
         <Input
           type={"checkbox"}
@@ -87,32 +91,30 @@ function ModalFormSecond({ status, value }) {
           color={status}
           variant={"outlined"}
           size={"xs"}
-          value={isValue}
-          onChange={handleChange}
-          checked={isChecked}
-          onChecked={handleChecked}
+          checked={checked}
+          onChange={() => {
+            setChecked(!checked)
+          }}
         />
         <Input
           type={"radio"}
-          name={"radio"}
+          name={"radio1"}
+          value={"1"}
           color={status}
           variant={"outlined"}
           size={"xs"}
-          value={isValue}
-          onChange={handleChange}
-          checked={isChecked}
-          onChecked={handleChecked}
+          checked={isRadio}
+          onChange={changeRadio}
         />
         <Input
           type={"radio"}
-          name={"radio"}
+          name={"radio2"}
+          value={"2"}
           color={status}
           variant={"outlined"}
           size={"xs"}
-          value={isValue}
-          onChange={handleChange}
-          checked={isChecked}
-          onChecked={handleChecked}
+          checked={isRadio}
+          onChange={changeRadio}
         />
         <Input
           type={"range"}
@@ -120,8 +122,6 @@ function ModalFormSecond({ status, value }) {
           color={status}
           variant={"outlined"}
           size={"range"}
-          value={isValue}
-          onChange={handleChange}
         />
       </div>
 
@@ -144,7 +144,7 @@ function ModalFormSecond({ status, value }) {
       </div>
     </div>
   ) : (
-    console.log("Нет цвета")
+    console.log("Нет цвета или скрыто")
   )
 }
 

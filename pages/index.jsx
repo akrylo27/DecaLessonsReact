@@ -23,10 +23,26 @@ export default function Home() {
       </Head>
       <Player track={track} />
       <div className="form-position">
-        <ModalFormSecond status={"success"} value={"Успешно"} />
-        <ModalFormSecond status={"primary"} value={"Обязательно"} />
-        <ModalFormSecond status={"info"} value={"Информация"} />
-        <ModalFormSecond status={"warning"} value={"Ошибка"} />
+        <ModalFormSecond
+          status={"success"}
+          label={"Успешно"}
+          value={"Введите текст"}
+        />
+        <ModalFormSecond
+          status={"primary"}
+          label={"Обязательно"}
+          value={"Введите текст"}
+        />
+        <ModalFormSecond
+          status={"info"}
+          label={"Информация"}
+          value={"Введите текст"}
+        />
+        <ModalFormSecond
+          status={"warning"}
+          label={"Ошибка"}
+          value={"Введите текст"}
+        />
         {/* <ModalForm
           success={"success"}
           primary={"primary"}
