@@ -25,7 +25,7 @@ export default function Home() {
       <Button
         text={'link'}
         type={'submit'}
-        style={'orange'}
+        style={'grey'}
         link={'https://ya.ru/'}
       />
     </>
