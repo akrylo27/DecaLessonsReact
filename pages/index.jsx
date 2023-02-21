@@ -1,6 +1,7 @@
 import Head from "next/head"
 import Player from "@/components/player"
 import ModalForm from "@/components/form/ModalForm"
+import ModalFormSecond from "@/components/form/ModalFormSecond"
 
 export default function Home() {
   const track = {
@@ -21,9 +22,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Player track={track} />
-      <ModalForm />
-
-      {/* Тестовая форма */}
+      <div className="form-position">
+        <ModalFormSecond status={"success"} value={"success"} checked={false} />
+        <ModalFormSecond status={"primary"} value={"primary"} checked={false} />
+        <ModalFormSecond status={"info"} value={"info"} checked={false} />
+        <ModalFormSecond status={"warning"} value={"warning"} checked={false} />
+        <ModalForm
+          success={"success"}
+          primary={"primary"}
+          info={"info"}
+          warning={"warning"}
+        />
+      </div>
     </>
   )
 }

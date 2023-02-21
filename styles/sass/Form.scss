@@ -5,13 +5,17 @@
   --form-color-red: #e32636;
 }
 
+.form-position {
+  display: flex;
+}
+
 //*Закрыть форму
 .form-close {
   &_one,
   &_two {
     position: absolute;
-    top: 25px;
-    right: 20px;
+    top: 20px;
+    right: 10px;
     border: 1.5px solid var(--player-color-one-light);
     width: 20px;
     transform: rotate(45deg);
@@ -26,14 +30,16 @@
 //* Свойства формы
 .form-wrapper {
   position: relative;
-  margin: 10px auto;
-  padding: 10px 0;
+  margin: 10px auto 0px;
+  padding: 20px 0 5px;
   display: flex;
   flex-direction: column;
+  min-width: 200px;
   width: auto;
-  width: 480px;
+
+  min-height: 250px;
   height: auto;
-  min-height: 350px;
+
   background: rgba(64, 64, 64, 0.241);
 
   flex-wrap: nowrap;
@@ -57,20 +63,23 @@
   &_info {
     color: var(--form-color-grey);
   }
-  &_danger {
+  &_warning {
     color: var(--form-color-red);
   }
 }
 
 .label-fz {
+  &_xg {
+    font-size: 35px;
+  }
   &_lg {
     font-size: 30px;
   }
   &_md {
-    font-size: 20px;
+    font-size: 25px;
   }
-  &_lm {
-    font-size: 10px;
+  &_sm {
+    font-size: 20px;
   }
 }
 
@@ -93,7 +102,7 @@
 }
 
 .input::placeholder {
-  color: rgb(210, 210, 210);
+  color: rgb(184, 184, 184);
 }
 
 .input-color {
@@ -106,7 +115,7 @@
   &_info {
     color: var(--form-color-grey);
   }
-  &_danger {
+  &_warning {
     color: var(--form-color-red);
   }
 }
@@ -121,34 +130,48 @@
     width: 80px;
   }
   &_xs {
-    width: 20px;
+    width: 50px;
     height: 20px;
-    font-size: 15px;
+    font-size: 10px;
     border: 1px solid;
   }
   &_sm {
-    width: 200px;
-    height: 10px;
-    font-size: 15px;
+    width: 100px;
+    height: 5px;
+    font-size: 10px;
     border: 1px solid;
   }
   &_md {
-    width: 250px;
-    height: 20px;
-    font-size: 25px;
+    width: 125px;
+    height: 10px;
+    font-size: 10px;
     border: 1px solid;
   }
   &_lg {
-    width: 300px;
-    height: 50px;
-    font-size: 35px;
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
     border: 1px solid;
   }
   &_xg {
-    width: 400px;
-    height: 70px;
-    font-size: 45px;
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
     border: 1px solid;
+  }
+}
+
+.input-size {
+  &_checkbox {
+    width: 15px;
+    height: 15px;
+  }
+  &_radio {
+    width: 15px;
+    height: 15px;
+  }
+  &_range {
+    width: 80px;
   }
 }
 
@@ -184,7 +207,7 @@
   &_info {
     color: var(--form-color-grey);
   }
-  &_danger {
+  &_warning {
     color: var(--form-color-red);
   }
 }
@@ -198,23 +221,23 @@
     border-radius: 5px;
   }
   &_md {
-    width: 70px;
+    width: 60px;
     height: 30px;
     font-size: 15px;
     border: 1px solid;
     border-radius: 5px;
   }
   &_lg {
-    width: 100px;
-    height: 50px;
-    font-size: 25px;
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
     border: 1px solid;
     border-radius: 5px;
   }
   &_xg {
-    width: 150px;
-    height: 70px;
-    font-size: 40px;
+    width: 100px;
+    height: 50px;
+    font-size: 25px;
     border: 1px solid;
     border-radius: 5px;
   }

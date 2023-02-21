@@ -4,7 +4,7 @@ import Input from "./Input"
 import Button from "./Button"
 import Closer from "./Closer"
 
-function ModalForm(props) {
+function ModalForm({ success, primary, info, warning }) {
   const [isClose, setIsClose] = useState(false)
   const [value, setValue] = useState("")
   const [checked, setChecked] = useState(false)
@@ -33,21 +33,21 @@ function ModalForm(props) {
         <Label
           htmlFor={"firstName"}
           value={"Success"}
-          fz={"lg"}
-          color={"success"}
+          fz={"xg"}
+          color={success}
         />
         <Label
           htmlFor={"firstName"}
           value={"Primary"}
-          fz={"md"}
-          color={"primary"}
+          fz={"lg"}
+          color={primary}
         />
-        <Label htmlFor={"firstName"} value={"Info"} fz={"sm"} color={"info"} />
+        <Label htmlFor={"firstName"} value={"Info"} fz={"md"} color={info} />
         <Label
           htmlFor={"firstName"}
           value={"Warning"}
           fz={"sm"}
-          color={"danger"}
+          color={warning}
         />
       </div>
 
@@ -57,7 +57,7 @@ function ModalForm(props) {
           type={"text"}
           name={"text"}
           placeholder={"Type something..."}
-          color={"success"}
+          color={success}
           variant={"outlined"}
           size={"xg"}
           value={value}
@@ -67,7 +67,7 @@ function ModalForm(props) {
           type={"email"}
           name={"email"}
           placeholder={"Type email..."}
-          color={"primary"}
+          color={primary}
           variant={"outlined"}
           size={"lg"}
           value={value}
@@ -77,7 +77,7 @@ function ModalForm(props) {
           type={"password"}
           name={"password"}
           placeholder={"Type password..."}
-          color={"primary"}
+          color={primary}
           variant={"outlined"}
           size={"lg"}
           value={value}
@@ -87,7 +87,7 @@ function ModalForm(props) {
           type={"text"}
           name={"text"}
           placeholder={"Warning"}
-          color={"danger"}
+          color={warning}
           variant={"outlined"}
           size={"sm"}
           value={value}
@@ -99,7 +99,7 @@ function ModalForm(props) {
         <Input
           type={"checkbox"}
           name={"checkbox"}
-          color={"info"}
+          color={info}
           variant={"outlined"}
           size={"xs"}
           value={value}
@@ -110,7 +110,7 @@ function ModalForm(props) {
         <Input
           type={"checkbox"}
           name={"checkbox"}
-          color={"info"}
+          color={info}
           variant={"outlined"}
           size={"xs"}
           value={value}
@@ -121,7 +121,7 @@ function ModalForm(props) {
         <Input
           type={"radio"}
           name={"radio"}
-          color={"info"}
+          color={info}
           variant={"outlined"}
           size={"xs"}
           value={value}
@@ -132,7 +132,7 @@ function ModalForm(props) {
         <Input
           type={"radio"}
           name={"radio"}
-          color={"info"}
+          color={info}
           variant={"outlined"}
           size={"xs"}
           value={value}
@@ -143,7 +143,7 @@ function ModalForm(props) {
         <Input
           type={"range"}
           name={"range"}
-          color={"info"}
+          color={info}
           variant={"outlined"}
           size={"range"}
           value={value}
@@ -155,7 +155,7 @@ function ModalForm(props) {
         <Input
           type={"date"}
           name={"date"}
-          color={"info"}
+          color={info}
           variant={"outlined"}
           size={"md"}
         />
@@ -163,7 +163,7 @@ function ModalForm(props) {
         <Input
           type={"file"}
           name={"file"}
-          color={"info"}
+          color={info}
           variant={"outlined"}
           size={"sm"}
         />
@@ -173,25 +173,20 @@ function ModalForm(props) {
       <div>
         <Button
           isClick={true}
-          color={"success"}
+          color={success}
           variant={"outlined"}
           size={"xg"}
         />
         <Button
           isClick={true}
-          color={"primary"}
+          color={primary}
           variant={"outlined"}
           size={"lg"}
         />
+        <Button isClick={true} color={info} variant={"outlined"} size={"md"} />
         <Button
           isClick={true}
-          color={"info"}
-          variant={"outlined"}
-          size={"md"}
-        />
-        <Button
-          isClick={true}
-          color={"danger"}
+          color={warning}
           variant={"outlined"}
           size={"sm"}
         />

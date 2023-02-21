@@ -1,12 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 
 function Button({ color, variant, size }) {
   // Функция, которая по клику будет отправлять нужный запрос
   const handleClick = () => {
     console.log("Функция сработала")
   }
-
-  //Здесь надо добавить prevetDefault() , чтобы форма не отправлялась, пока не выполнятся определенные условия
 
   return (
     <>
