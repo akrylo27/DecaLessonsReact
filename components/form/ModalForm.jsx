@@ -6,6 +6,18 @@ import Closer from "./Closer"
 
 function ModalForm(props) {
   const [isClose, setIsClose] = useState(false)
+  const [value, setValue] = useState("")
+  const [checked, setChecked] = useState(false)
+  //? const [isRadioChecked, setIsRadioCheked] = useState(false)
+
+  const handleChecked = () => {
+    setChecked(!checked)
+  }
+
+  const handleChange = (event) => {
+    console.log(event.target.value)
+    setValue(event.target.value)
+  }
 
   const handleCloseForm = () => {
     setIsClose({ isClose })
@@ -43,27 +55,33 @@ function ModalForm(props) {
       <div>
         <Input
           type={"text"}
-          name={"firstName"}
+          name={"text"}
           placeholder={"Type something..."}
           color={"success"}
           variant={"outlined"}
           size={"xg"}
+          value={value}
+          onChange={handleChange}
         />
         <Input
           type={"email"}
-          name={"secondName"}
+          name={"email"}
           placeholder={"Type email..."}
           color={"primary"}
           variant={"outlined"}
           size={"lg"}
+          value={value}
+          onChange={handleChange}
         />
         <Input
           type={"password"}
-          name={"thirdName"}
+          name={"password"}
           placeholder={"Type password..."}
           color={"primary"}
           variant={"outlined"}
           size={"lg"}
+          value={value}
+          onChange={handleChange}
         />
         <Input
           type={"text"}
@@ -72,61 +90,83 @@ function ModalForm(props) {
           color={"danger"}
           variant={"outlined"}
           size={"sm"}
+          value={value}
+          onChange={handleChange}
         />
-        <div>
-          <Input
-            type={"checkbox"}
-            name={"checkbox"}
-            color={"info"}
-            variant={"outlined"}
-            size={"xs"}
-          />
-          <Input
-            type={"checkbox"}
-            name={"checkbox"}
-            color={"info"}
-            variant={"outlined"}
-            size={"xs"}
-          />
-          <Input
-            type={"radio"}
-            name={"radio"}
-            color={"info"}
-            variant={"outlined"}
-            size={"xs"}
-          />
-          <Input
-            type={"radio"}
-            name={"radio"}
-            color={"info"}
-            variant={"outlined"}
-            size={"xs"}
-          />
-          <Input
-            type={"range"}
-            name={"range"}
-            color={"info"}
-            variant={"outlined"}
-            size={"range"}
-          />
-        </div>
-        <div>
-          <Input
-            type={"date"}
-            name={"date"}
-            color={"info"}
-            variant={"outlined"}
-            size={"md"}
-          />
+      </div>
 
-          <Input
-            type={"file"}
-            name={"file"}
-            color={"info"}
-            variant={"outlined"}
-            size={"sm"}
-          />
-        </div>
+      <div>
+        <Input
+          type={"checkbox"}
+          name={"checkbox"}
+          checked={checked}
+          onChecked={handleChecked}
+          color={"info"}
+          variant={"outlined"}
+          size={"xs"}
+          value={value}
+          onChange={handleChange}
+        />
+        <Input
+          type={"checkbox"}
+          name={"checkbox"}
+          checked={checked}
+          onChecked={handleChecked}
+          color={"info"}
+          variant={"outlined"}
+          size={"xs"}
+          value={value}
+          onChange={handleChange}
+        />
+        <Input
+          type={"radio"}
+          name={"radio"}
+          color={"info"}
+          checked={checked}
+          onChecked={handleChecked}
+          variant={"outlined"}
+          size={"xs"}
+          value={value}
+          onChange={handleChange}
+        />
+        <Input
+          type={"radio"}
+          name={"radio"}
+          checked={checked}
+          onChecked={handleChecked}
+          color={"info"}
+          variant={"outlined"}
+          size={"xs"}
+          value={value}
+          onChange={handleChange}
+        />
+        <Input
+          type={"range"}
+          name={"range"}
+          color={"info"}
+          variant={"outlined"}
+          size={"range"}
+          value={value}
+          onChange={handleChange}
+        />
+      </div>
+
+      <div>
+        <Input
+          type={"date"}
+          name={"date"}
+          color={"info"}
+          variant={"outlined"}
+          size={"md"}
+        />
+
+        <Input
+          type={"file"}
+          name={"file"}
+          color={"info"}
+          variant={"outlined"}
+          size={"sm"}
+        />
       </div>
 
       {/* //* Buttons */}
