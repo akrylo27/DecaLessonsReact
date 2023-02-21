@@ -159,14 +159,6 @@ function ModalForm({ success, primary, info, warning }) {
           variant={"outlined"}
           size={"md"}
         />
-
-        <Input
-          type={"file"}
-          name={"file"}
-          color={info}
-          variant={"outlined"}
-          size={"sm"}
-        />
       </div>
 
       {/* //* Buttons */}

@@ -20,7 +20,7 @@ function ModalFormSecond({ status, value, checked }) {
     <div className="form-wrapper">
       {/* //* Labels */}
       <div>
-        <Label htmlFor={"firstName"} value={value} fz={"xg"} color={status} />
+        <Label htmlFor={value} value={value} fz={"xg"} color={status} />
       </div>
 
       {/* //* Inputs */}
@@ -110,14 +110,6 @@ function ModalFormSecond({ status, value, checked }) {
           color={status}
           variant={"outlined"}
           size={"md"}
-        />
-
-        <Input
-          type={"file"}
-          name={"file"}
-          color={status}
-          variant={"outlined"}
-          size={"sm"}
         />
       </div>
 
