@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-function Input({ type, name, placeholder, color, variant, size }) {
+function Input({ type, name, placeholder, color, variant, size, onChange }) {
   // const [vaue,setValue]
   //Следим за изменениями в инпуте и выводим его в состояние
 
@@ -13,6 +13,7 @@ function Input({ type, name, placeholder, color, variant, size }) {
         name={name}
         placeholder={placeholder}
         className={`input input-color_${color} input-variant_${variant} input-size_${size}`}
+        onChange={onChange}
       />
     </>
   )
