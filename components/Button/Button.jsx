@@ -11,11 +11,11 @@ const Button = ({
   const renderSwitchButton = (style, link) => {
     if (link) {
       return (
-        <Link href={link}>
-          <button className={'button button__' + style} type={type} {...props}>
+        <button className={'button button__' + style} type={type} {...props}>
+          <Link href={link}>
             <p>{text}</p>
-          </button>
-        </Link>
+          </Link>
+        </button>
       );
     } else {
       return (
