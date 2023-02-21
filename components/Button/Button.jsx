@@ -5,7 +5,7 @@ const Button = ({
   text = 'default',
   type = 'button',
   style = 'default',
-  link,
+  link = false,
   ...props
 }) => {
   const renderSwitchButton = (style, link) => {
