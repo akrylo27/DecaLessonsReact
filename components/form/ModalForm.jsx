@@ -10,13 +10,13 @@ function ModalForm(props) {
   const [checked, setChecked] = useState(false)
   //? const [isRadioChecked, setIsRadioCheked] = useState(false)
 
-  const handleChecked = () => {
-    setChecked(!checked)
-  }
-
   const handleChange = (event) => {
     console.log(event.target.value)
     setValue(event.target.value)
+  }
+
+  const handleChecked = () => {
+    setChecked(!checked)
   }
 
   const handleCloseForm = () => {
@@ -32,20 +32,20 @@ function ModalForm(props) {
       <div>
         <Label
           htmlFor={"firstName"}
-          value={"Label"}
+          value={"Success"}
           fz={"lg"}
           color={"success"}
         />
         <Label
           htmlFor={"firstName"}
-          value={"Label"}
+          value={"Primary"}
           fz={"md"}
           color={"primary"}
         />
-        <Label htmlFor={"firstName"} value={"Label"} fz={"sm"} color={"info"} />
+        <Label htmlFor={"firstName"} value={"Info"} fz={"sm"} color={"info"} />
         <Label
           htmlFor={"firstName"}
-          value={"Label"}
+          value={"Warning"}
           fz={"sm"}
           color={"danger"}
         />
@@ -99,46 +99,46 @@ function ModalForm(props) {
         <Input
           type={"checkbox"}
           name={"checkbox"}
-          checked={checked}
-          onChecked={handleChecked}
           color={"info"}
           variant={"outlined"}
           size={"xs"}
           value={value}
           onChange={handleChange}
+          checked={checked}
+          onChecked={handleChecked}
         />
         <Input
           type={"checkbox"}
           name={"checkbox"}
-          checked={checked}
-          onChecked={handleChecked}
           color={"info"}
           variant={"outlined"}
           size={"xs"}
           value={value}
           onChange={handleChange}
+          checked={checked}
+          onChecked={handleChecked}
         />
         <Input
           type={"radio"}
           name={"radio"}
           color={"info"}
-          checked={checked}
-          onChecked={handleChecked}
           variant={"outlined"}
           size={"xs"}
           value={value}
           onChange={handleChange}
+          checked={checked}
+          onChecked={handleChecked}
         />
         <Input
           type={"radio"}
           name={"radio"}
-          checked={checked}
-          onChecked={handleChecked}
           color={"info"}
           variant={"outlined"}
           size={"xs"}
           value={value}
           onChange={handleChange}
+          checked={checked}
+          onChecked={handleChecked}
         />
         <Input
           type={"range"}

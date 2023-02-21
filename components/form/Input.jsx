@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 
 function Input({ type, name, placeholder, color, variant, size, onChange }) {
   // const [vaue,setValue]
@@ -11,7 +11,7 @@ function Input({ type, name, placeholder, color, variant, size, onChange }) {
       <input
         type={type}
         name={name}
-        placeholder={placeholder}
+        placeholder={placeholder || ""}
         className={`input input-color_${color} input-variant_${variant} input-size_${size}`}
         onChange={onChange}
       />
