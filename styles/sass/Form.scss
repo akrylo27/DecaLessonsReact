@@ -161,18 +161,51 @@
     border: 1px solid;
   }
 }
+//Checkbox
+.checkbox-color {
+  &_success {
+    color: var(--form-color-green);
+  }
+  &_primary {
+    color: var(--form-color-blue);
+  }
+  &_info {
+    color: var(--form-color-grey);
+  }
+  &_warning {
+    color: var(--form-color-red);
+  }
+}
 
-.input-size {
-  &_checkbox {
+.checkbox-size {
+  &_xg {
+    margin: 5px 20px;
+    width: 25px;
+    height: 25px;
+  }
+  &_lg {
+    margin: 5px 20px;
+    width: 20px;
+    height: 20px;
+  }
+  &_md {
+    margin: 5px 20px;
     width: 15px;
     height: 15px;
   }
-  &_radio {
-    width: 15px;
-    height: 15px;
+  &_sm {
+    margin: 5px 20px;
+    width: 10px;
+    height: 10px;
   }
-  &_range {
-    width: 80px;
+}
+
+.checkbox-variant {
+  &_outlined {
+    border: 1px solid;
+    /* -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none; */
   }
 }
 

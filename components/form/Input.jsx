@@ -17,8 +17,8 @@ function Input({
         name={name}
         placeholder={placeholder || ""}
         className={`input input-color_${color} input-variant_${variant} input-size_${size} input-size_${type}`}
-        onChange={onChange}
         value={isValue}
+        onChange={onChange}
       />
     </>
   )

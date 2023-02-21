@@ -3,12 +3,11 @@ import Label from "./Label"
 import Input from "./Input"
 import Button from "./Button"
 import Closer from "./Closer"
+import Checkbox from "./Checkbox"
 
-function ModalFormSecond({ status, label, value }) {
+function ModalFormSecond({ color, label, value }) {
   const [isClose, setIsClose] = useState(false)
   const [isValue, setIsValue] = useState(value)
-  const [checked, setChecked] = useState(true)
-  const [isRadio, setIsRadio] = useState("1")
 
   const handleCloseForm = () => {
     setIsClose({ isClose })
@@ -19,23 +18,18 @@ function ModalFormSecond({ status, label, value }) {
     setIsValue(event.target.value)
   }
 
-  const changeRadio = (event) => {
-    setIsRadio(event.target.value)
-  }
   return !isClose ? (
     <div className="form-wrapper">
-      {/* //* Labels */}
       <Closer close={handleCloseForm} />
       <div>
-        <Label htmlFor={label} value={label} fz={"xg"} color={status} />
+        <Label htmlFor={label} value={label} fz={"xg"} color={color} />
       </div>
-      {/* //* Inputs */}
       <div>
         <Input
           type={"text"}
           name={"text"}
           placeholder={"Type something..."}
-          color={status}
+          color={color}
           variant={"outlined"}
           size={"xg"}
           value={isValue}
@@ -45,7 +39,7 @@ function ModalFormSecond({ status, label, value }) {
           type={"text"}
           name={"text"}
           placeholder={"Type something..."}
-          color={status}
+          color={color}
           variant={"outlined"}
           size={"lg"}
           value={isValue}
@@ -55,7 +49,7 @@ function ModalFormSecond({ status, label, value }) {
           type={"text"}
           name={"text"}
           placeholder={"Type something..."}
-          color={status}
+          color={color}
           variant={"outlined"}
           size={"md"}
           value={isValue}
@@ -65,82 +59,48 @@ function ModalFormSecond({ status, label, value }) {
           type={"text"}
           name={"text"}
           placeholder={"Type something..."}
-          color={status}
+          color={color}
           variant={"outlined"}
           size={"sm"}
           value={isValue}
           onChange={handleChange}
         />
       </div>
-      {/* //* Buttons */}
       <div>
-        <Input
+        <Checkbox
           type={"checkbox"}
-          name={"checkbox"}
-          color={status}
+          color="success"
+          label="label"
           variant={"outlined"}
-          size={"xs"}
-          checked={checked}
-          onChange={() => {
-            setChecked(!checked)
-          }}
+          size={"xg"}
         />
-        <Input
+        <Checkbox
           type={"checkbox"}
-          name={"checkbox"}
-          color={status}
+          color="primary"
+          label="label"
           variant={"outlined"}
-          size={"xs"}
-          checked={checked}
-          onChange={() => {
-            setChecked(!checked)
-          }}
+          size={"lg"}
         />
-        <Input
-          type={"radio"}
-          name={"radio1"}
-          value={"1"}
-          color={status}
-          variant={"outlined"}
-          size={"xs"}
-          checked={isRadio}
-          onChange={changeRadio}
-        />
-        <Input
-          type={"radio"}
-          name={"radio2"}
-          value={"2"}
-          color={status}
-          variant={"outlined"}
-          size={"xs"}
-          checked={isRadio}
-          onChange={changeRadio}
-        />
-        <Input
-          type={"range"}
-          name={"range"}
-          color={status}
-          variant={"outlined"}
-          size={"range"}
-        />
-      </div>
-
-      <div>
-        <Input
-          type={"date"}
-          name={"date"}
-          color={status}
+        <Checkbox
+          type={"checkbox"}
+          color="info"
+          label="label"
           variant={"outlined"}
           size={"md"}
         />
+        <Checkbox
+          type={"checkbox"}
+          color="warning"
+          label="label"
+          variant={"outlined"}
+          size={"sm"}
+        />
       </div>
-
-      {/* //* Buttons */}
       <div>
-        <Button color={status} variant={"outlined"} size={"xg"} />
-        <Button color={status} variant={"outlined"} size={"lg"} />
-        <Button color={status} variant={"outlined"} size={"md"} />
-        <Button color={status} variant={"outlined"} size={"sm"} />
+        <Button color={color} variant={"outlined"} size={"xg"} />
+        <Button color={color} variant={"outlined"} size={"lg"} />
+        <Button color={color} variant={"outlined"} size={"md"} />
+        <Button color={color} variant={"outlined"} size={"sm"} />
       </div>
     </div>
   ) : (

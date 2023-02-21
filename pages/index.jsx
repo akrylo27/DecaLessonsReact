@@ -1,6 +1,5 @@
 import Head from "next/head"
 import Player from "@/components/player"
-import ModalForm from "@/components/form/ModalForm"
 import ModalFormSecond from "@/components/form/ModalFormSecond"
 
 export default function Home() {
@@ -24,31 +23,25 @@ export default function Home() {
       <Player track={track} />
       <div className="form-position">
         <ModalFormSecond
-          status={"success"}
+          color={"success"}
           label={"Успешно"}
           value={"Введите текст"}
         />
         <ModalFormSecond
-          status={"primary"}
+          color={"primary"}
           label={"Обязательно"}
           value={"Введите текст"}
         />
         <ModalFormSecond
-          status={"info"}
+          color={"info"}
           label={"Информация"}
           value={"Введите текст"}
         />
         <ModalFormSecond
-          status={"warning"}
+          color={"warning"}
           label={"Ошибка"}
           value={"Введите текст"}
         />
-        {/* <ModalForm
-          success={"success"}
-          primary={"primary"}
-          info={"info"}
-          warning={"warning"}
-        /> */}
       </div>
     </>
   )
