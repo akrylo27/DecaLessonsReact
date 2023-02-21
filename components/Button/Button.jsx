@@ -26,7 +26,7 @@ const Button = ({
     }
   };
 
-  return <div>{renderSwitchButton(style, link)}</div>;
+  return renderSwitchButton(style, link);
 };
 
 export default Button;
