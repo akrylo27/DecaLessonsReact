@@ -23,16 +23,16 @@ export default function Home() {
       </Head>
       <Player track={track} />
       <div className="form-position">
-        <ModalFormSecond status={"success"} value={"success"} checked={false} />
-        <ModalFormSecond status={"primary"} value={"primary"} checked={false} />
-        <ModalFormSecond status={"info"} value={"info"} checked={false} />
-        <ModalFormSecond status={"warning"} value={"warning"} checked={false} />
-        <ModalForm
+        <ModalFormSecond status={"success"} value={"Успешно"} />
+        <ModalFormSecond status={"primary"} value={"Обязательно"} />
+        <ModalFormSecond status={"info"} value={"Информация"} />
+        <ModalFormSecond status={"warning"} value={"Ошибка"} />
+        {/* <ModalForm
           success={"success"}
           primary={"primary"}
           info={"info"}
           warning={"warning"}
-        />
+        /> */}
       </div>
     </>
   )

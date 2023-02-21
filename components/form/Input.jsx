@@ -1,6 +1,15 @@
 import React from "react"
 
-function Input({ type, name, placeholder, color, variant, size, onChange }) {
+function Input({
+  type,
+  name,
+  placeholder,
+  color,
+  variant,
+  size,
+  onChange,
+  isValue,
+}) {
   return (
     <>
       <input
@@ -9,6 +18,7 @@ function Input({ type, name, placeholder, color, variant, size, onChange }) {
         placeholder={placeholder || ""}
         className={`input input-color_${color} input-variant_${variant} input-size_${size} input-size_${type}`}
         onChange={onChange}
+        value={isValue}
       />
     </>
   )

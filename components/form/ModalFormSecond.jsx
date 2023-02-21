@@ -3,8 +3,8 @@ import Label from "./Label"
 import Input from "./Input"
 import Button from "./Button"
 
-function ModalFormSecond({ status, value, checked }) {
-  const [isValue, setIsValue] = useState("")
+function ModalFormSecond({ status, value }) {
+  const [isValue, setIsValue] = useState("Введите текст")
   const [isChecked, setIsChecked] = useState(false)
 
   const handleChecked = () => {
@@ -35,17 +35,39 @@ function ModalFormSecond({ status, value, checked }) {
           value={isValue}
           onChange={handleChange}
         />
+        <Input
+          type={"text"}
+          name={"text"}
+          placeholder={"Type something..."}
+          color={status}
+          variant={"outlined"}
+          size={"lg"}
+          value={isValue}
+          onChange={handleChange}
+        />
+        <Input
+          type={"text"}
+          name={"text"}
+          placeholder={"Type something..."}
+          color={status}
+          variant={"outlined"}
+          size={"md"}
+          value={isValue}
+          onChange={handleChange}
+        />
+        <Input
+          type={"text"}
+          name={"text"}
+          placeholder={"Type something..."}
+          color={status}
+          variant={"outlined"}
+          size={"sm"}
+          value={isValue}
+          onChange={handleChange}
+        />
       </div>
 
       {/* //* Buttons */}
-      <div>
-        <Button
-          isClick={true}
-          color={status}
-          variant={"outlined"}
-          size={"xg"}
-        />
-      </div>
 
       <div>
         <Input
@@ -56,7 +78,7 @@ function ModalFormSecond({ status, value, checked }) {
           size={"xs"}
           value={isValue}
           onChange={handleChange}
-          checked={checked}
+          checked={isChecked}
           onChecked={handleChecked}
         />
         <Input
@@ -67,7 +89,7 @@ function ModalFormSecond({ status, value, checked }) {
           size={"xs"}
           value={isValue}
           onChange={handleChange}
-          checked={checked}
+          checked={isChecked}
           onChecked={handleChecked}
         />
         <Input
@@ -78,7 +100,7 @@ function ModalFormSecond({ status, value, checked }) {
           size={"xs"}
           value={isValue}
           onChange={handleChange}
-          checked={checked}
+          checked={isChecked}
           onChecked={handleChecked}
         />
         <Input
@@ -89,7 +111,7 @@ function ModalFormSecond({ status, value, checked }) {
           size={"xs"}
           value={isValue}
           onChange={handleChange}
-          checked={checked}
+          checked={isChecked}
           onChecked={handleChecked}
         />
         <Input
