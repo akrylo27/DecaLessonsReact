@@ -22,8 +22,12 @@ export default function Home() {
       </Head>
 
       <Player track={track} />
-
-      <Registration />
+      <div className="form-position">
+        <Registration />
+        <Registration />
+        <Registration />
+        <Registration />
+      </div>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import React from "react"
+/* import React from "react"
 
 function Password({ type }) {
   return (
@@ -9,3 +9,4 @@ function Password({ type }) {
 }
 
 export default Password
+ */
