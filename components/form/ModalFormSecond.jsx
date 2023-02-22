@@ -8,6 +8,7 @@ import Checkbox from "./Checkbox"
 function ModalFormSecond({ color, label, value }) {
   const [isClose, setIsClose] = useState(false)
   const [isValue, setIsValue] = useState(value)
+  const [checked, setChecked] = useState(true)
 
   const handleCloseForm = () => {
     setIsClose({ isClose })
@@ -16,6 +17,11 @@ function ModalFormSecond({ color, label, value }) {
   const handleChange = (event) => {
     console.log(event.target.value)
     setIsValue(event.target.value)
+  }
+
+  const handleChecked = (event) => {
+    console.log(event.target.value)
+    setChecked(!checked)
   }
 
   return !isClose ? (
@@ -69,31 +75,39 @@ function ModalFormSecond({ color, label, value }) {
       <div>
         <Checkbox
           type={"checkbox"}
+          id={"checkbox"}
           color="success"
-          label="label"
           variant={"outlined"}
           size={"xg"}
+          checked={checked}
+          onChange={handleChecked}
         />
         <Checkbox
           type={"checkbox"}
+          id={"checkbox"}
           color="primary"
-          label="label"
           variant={"outlined"}
           size={"lg"}
+          checked={checked}
+          onChange={handleChecked}
         />
         <Checkbox
           type={"checkbox"}
+          id={"checkbox"}
           color="info"
-          label="label"
           variant={"outlined"}
           size={"md"}
+          checked={checked}
+          onChange={handleChecked}
         />
         <Checkbox
           type={"checkbox"}
+          id={"checkbox"}
           color="warning"
-          label="label"
           variant={"outlined"}
           size={"sm"}
+          checked={checked}
+          onChange={handleChecked}
         />
       </div>
       <div>

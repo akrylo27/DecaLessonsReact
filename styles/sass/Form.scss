@@ -5,6 +5,12 @@
   --form-color-red: #e32636;
 }
 
+input {
+  -webkit-appearance: checkbox;
+  -webkit-font-smoothing: antialiased;
+  resize: none;
+}
+
 .form-position {
   display: flex;
 }
@@ -36,12 +42,9 @@
   flex-direction: column;
   min-width: 200px;
   width: auto;
-
   min-height: 250px;
   height: auto;
-
   background: rgba(64, 64, 64, 0.241);
-
   flex-wrap: nowrap;
   border-radius: 15px;
   border: 2px solid black;
@@ -162,51 +165,55 @@
   }
 }
 //Checkbox
+.checkbox-wrapper {
+  display: flex;
+  margin: 20px auto;
+  align-items: center;
+}
+
 .checkbox-color {
   &_success {
     color: var(--form-color-green);
+    border: 1px solid;
   }
   &_primary {
     color: var(--form-color-blue);
+    border: 1px solid;
   }
   &_info {
     color: var(--form-color-grey);
+    border: 1px solid;
   }
   &_warning {
     color: var(--form-color-red);
+    border: 1px solid;
   }
 }
 
 .checkbox-size {
   &_xg {
-    margin: 5px 20px;
+    margin: 0 20px;
     width: 25px;
     height: 25px;
   }
   &_lg {
-    margin: 5px 20px;
+    margin: 0 20px;
     width: 20px;
     height: 20px;
   }
   &_md {
-    margin: 5px 20px;
+    margin: 0 20px;
     width: 15px;
     height: 15px;
   }
   &_sm {
-    margin: 5px 20px;
+    margin: 0 20px;
     width: 10px;
     height: 10px;
   }
 }
 
-.checkbox-variant {
-  &_outlined {
-    border: 1px solid;
-    /* -moz-appearance: none;
-    -webkit-appearance: none;
-    -o-appearance: none; */
-  }
+.checkbox {
 }
 
 //* Свойства кнопок

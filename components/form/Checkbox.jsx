@@ -1,20 +1,21 @@
-import React, { useState } from "react"
+import React from "react"
 
-function Checkbox({ color, label, variant, size, type, onChange }) {
-  const [checked, setChecked] = useState(true)
-  const handleChecked = () => {
-    setChecked(!checked)
-  }
+function Checkbox({ id, color, variant, size, type, checked, onChange }) {
   return (
-    <div>
-      <input
-        color={color}
-        type={type}
-        label={label}
-        className={`checkbox checkbox-color_${color} checkbox-variant_${variant}  checkbox-size_${size}`}
-        checked={checked}
-        onChange={handleChecked}
-      />
+    <div className="checkbox-wrapper">
+      <>
+        <input
+          id={id}
+          color={color}
+          type={type}
+          className={`checkbox checkbox-color_${color} checkbox-variant_${variant}  checkbox-size_${size}`}
+          checked={checked}
+          onChange={onChange}
+        />
+      </>
+      <>
+        <label htmlFor={id}>Выбери меня</label>
+      </>
     </div>
   )
 }
