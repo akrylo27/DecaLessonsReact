@@ -1,10 +1,22 @@
-import React from "react"
+import React, { useState } from "react"
 import Input from "./Input"
 import Checkbox from "./Checkbox"
 import Button from "./Button"
 import Label from "./Label"
 
-function Registration(props) {
+function Registration({ value, type }) {
+  const [isValue, setIsValue] = useState(value)
+  const [checked, setChecked] = useState(true)
+
+  const handleChange = (event) => {
+    console.log(event.target.value)
+    setIsValue(event.target.value)
+  }
+
+  const handleChecked = (event) => {
+    console.log(event.target.value)
+    setChecked(!checked)
+  }
   return (
     <div className="form-wrapper">
       {/* Label */}
@@ -15,39 +27,50 @@ function Registration(props) {
 
       {/* Input */}
       <Input
-        type={"text"}
+        type={type}
         placeholder={"Введите текст"}
         color={"success"}
         size={"xg"}
         variant={"outlined"}
+        value={isValue}
+        onChange={handleChange}
       />
       <Input
-        type={"text"}
+        type={type}
         placeholder={"Введите текст"}
         color={"primary"}
         size={"lg"}
         variant={"outlined"}
+        value={isValue}
+        onChange={handleChange}
       />
       <Input
-        type={"password"}
+        type={type}
         placeholder={"Введите текст"}
         color={"info"}
         size={"md"}
         variant={"outlined"}
+        value={isValue}
+        onChange={handleChange}
       />
       <Input
-        type={"email"}
+        type={type}
         placeholder={"Введите текст"}
         color={"warning"}
         size={"sm"}
         variant={"outlined"}
+        value={isValue}
+        onChange={handleChange}
       />
 
       {/* Checkbox */}
-      <Checkbox type={"checkbox"} color={"success"} />
-      <Checkbox type={"checkbox"} color={"primary"} />
+      <Checkbox
+        type={"checkbox"}
+        color={"success"}
+        checked={checked}
+        onChange={handleChecked}
+      />
       <Checkbox type={"radio"} color={"info"} />
-      <Checkbox type={"radio"} color={"warning"} />
 
       {/* Button */}
       <Button

@@ -22,11 +22,12 @@ export default function Home() {
       </Head>
 
       <Player track={track} />
+
       <div className="form-position">
-        <Registration />
-        <Registration />
-        <Registration />
-        <Registration />
+        <Registration value={"Имя"} type={"text"} />
+        <Registration value={"Фамилия"} type={"text"} />
+        <Registration value={"Пароль"} type={"password"} />
+        <Registration value={"Емайл"} type={"email"} />
       </div>
     </>
   )
