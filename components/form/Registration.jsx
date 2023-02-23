@@ -18,14 +18,11 @@ function Registration({ value, type }) {
     setChecked(!checked)
   }
   return (
-    <div className="form-wrapper">
+    <form className="form-wrapper">
       {/* Label */}
-      <Label color={"success"} text={"Успешно"} size={"xg"} />
-      <Label color={"primary"} text={"Обязательно"} size={"lg"} />
-      <Label color={"info"} text={"Информация"} size={"md"} />
-      <Label color={"warning"} text={"Предупреждение"} size={"sm"} />
 
       {/* Input */}
+      <Label color={"success"} text={"Успешно"} size={"xg"} />
       <Input
         type={type}
         placeholder={"Введите текст"}
@@ -35,6 +32,8 @@ function Registration({ value, type }) {
         value={isValue}
         onChange={handleChange}
       />
+
+      <Label color={"primary"} text={"Обязательно"} size={"lg"} />
       <Input
         type={type}
         placeholder={"Введите текст"}
@@ -44,6 +43,8 @@ function Registration({ value, type }) {
         value={isValue}
         onChange={handleChange}
       />
+
+      <Label color={"info"} text={"Информация"} size={"md"} />
       <Input
         type={type}
         placeholder={"Введите текст"}
@@ -53,6 +54,8 @@ function Registration({ value, type }) {
         value={isValue}
         onChange={handleChange}
       />
+
+      <Label color={"warning"} text={"Предупреждение"} size={"sm"} />
       <Input
         type={type}
         placeholder={"Введите текст"}
@@ -64,13 +67,19 @@ function Registration({ value, type }) {
       />
 
       {/* Checkbox */}
-      <Checkbox
-        type={"checkbox"}
-        color={"success"}
-        checked={checked}
-        onChange={handleChecked}
-      />
-      <Checkbox type={"radio"} color={"info"} />
+      <div className="checkbox-wrapper">
+        <Checkbox
+          type={"checkbox"}
+          color={"success"}
+          checked={checked}
+          onChange={handleChecked}
+        />
+        <Label color={"info"} text={"checkbox"} size={"sm"} />
+      </div>
+      <div className="checkbox-wrapper">
+        <Checkbox type={"radio"} color={"info"} />
+        <Label color={"info"} text={"radio"} size={"sm"} />
+      </div>
 
       {/* Button */}
       <Button
@@ -92,7 +101,7 @@ function Registration({ value, type }) {
         size={"sm"}
         variant={"outlined"}
       />
-    </div>
+    </form>
   )
 }
 

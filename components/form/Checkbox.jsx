@@ -9,6 +9,7 @@ function Checkbox({ type, checked, onChange }) {
         id="checkbox"
         checked={checked}
         onChange={onChange}
+        className={"checkbox-position"}
       />
     </div>
   )

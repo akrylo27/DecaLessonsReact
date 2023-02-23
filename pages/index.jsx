@@ -26,8 +26,8 @@ export default function Home() {
       <div className="form-position">
         <Registration value={"Имя"} type={"text"} />
         <Registration value={"Фамилия"} type={"text"} />
-        <Registration value={"Пароль"} type={"password"} />
-        <Registration value={"Емайл"} type={"email"} />
+        <Registration value={"password"} type={"password"} />
+        <Registration value={"email"} type={"email"} />
       </div>
     </>
   )
