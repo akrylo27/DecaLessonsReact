@@ -79,6 +79,8 @@ function Registration({ value, type }) {
       <div className="checkbox-wrapper">
         <Checkbox type={"radio"} color={"info"} />
         <Label color={"info"} text={"radio"} size={"sm"} />
+        <Checkbox type={"radio"} color={"info"} />
+        <Label color={"info"} text={"radio"} size={"sm"} />
       </div>
 
       {/* Button */}
