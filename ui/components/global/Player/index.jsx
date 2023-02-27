@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import styles from '@/ui/components/global/Player/Player.module.scss'
 
 export default function Player({ track }) {
   const [audio, setAudio] = useState(null);
@@ -90,21 +91,15 @@ export default function Player({ track }) {
 
   return (
     <>
-      <div className='player'>
-        <div className='player-bar' onClick={rewind}>
-          <div className='player-bar__progress'>
-            <style jsx>{`
-              .player-bar__progress {
-                width: ${percentage}%;
-              }
-            `}</style>
-          </div>
+      <div className={styles.player}>
+        <div className={styles.playerBar} onClick={rewind}>
+          <div className={styles.playerBar__progress} style={{width: `${percentage}%`}}></div>
         </div>
 
         <div className='container'>
-          <div className='player-box'>
-            <div className={`player-box__play ${!isPlay ? 'active' : ''}`} onClick={play}></div>
-            <div className='player-box__body'>
+          <div className={styles.playerBox}>
+            <div className={`${styles.playerBox__play} ${!isPlay ? styles.active : ''}`} onClick={play}></div>
+            <div className={styles.playerBox__body}>
               <strong>{track.author}</strong> - {track.name}
               <span>
                 {currentTime} / {fullTime}
