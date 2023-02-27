@@ -11,7 +11,7 @@ const Button = ({
   const renderSwitchButton = (style, link) => {
     if (link) {
       return (
-        <button className={'button button__' + style} type={type} {...props}>
+        <button className={`button button__${style}`} type={type} {...props}>
           <Link href={link}>
             <p>{text}</p>
           </Link>
@@ -19,7 +19,7 @@ const Button = ({
       );
     } else {
       return (
-        <button className={'button button__' + style} type={type} {...props}>
+        <button className={`button button__${style}`} type={type} {...props}>
           <p>{text}</p>
         </button>
       );
