@@ -1,6 +1,6 @@
 import React from "react"
 
-function Checkbox({ type, checked, onChange, id }) {
+function Checkbox({ type, checked, onChange }) {
   return (
     <div>
       <input
@@ -9,7 +9,6 @@ function Checkbox({ type, checked, onChange, id }) {
         checked={checked}
         onChange={onChange}
         className={"checkbox-position"}
-        id={id}
       />
     </div>
   )
