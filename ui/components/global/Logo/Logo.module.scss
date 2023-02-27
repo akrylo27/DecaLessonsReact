@@ -3,7 +3,11 @@
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: 3px;
+  transition: opacity .2s;
   span {
     color: var(--player-color-one)
+  }
+  &:hover {
+    opacity: .7;
   }
 }
