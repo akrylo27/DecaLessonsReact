@@ -7,12 +7,28 @@
   background: rgba(255,255,255,.7);
   backdrop-filter: blur(10px);
   font-family: Arial, sans-serif;
-  &:hover .player-bar__progress {
+  &:hover .playerBar__progress {
     height: 8px;
   }
 }
 
-.player-box {
+.playerBar{
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.07);
+  cursor: pointer;
+  &__progress {
+    width: 0;
+    background: linear-gradient(to left, var(--player-color-one), var(--player-color-two));
+    height: 3px;
+    pointer-events: none;
+    transition: height .1s;
+  }
+}
+
+.playerBox {
   height: 60px;
   display: flex;
   align-items: center;
@@ -65,28 +81,16 @@
   }
 }
 
-.player-bar {
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,.07);
-  cursor: pointer;
-  &__progress {
-    width: 0;
-    background: linear-gradient(to left, var(--player-color-one), var(--player-color-two));
-    height: 3px;
-    pointer-events: none;
-    transition: height .1s;
-  }
-}
-
 @media (prefers-color-scheme: dark) {
   .player {
     background: rgba(255,255,255,.1);
   }
 
-  .player-box {
+  .playerBar {
+    background: rgba(255,255,255,.2);
+  }
+
+  .playerBox {
     &__play {
       background: transparentize(#fff4ee, .9);
       &:hover {
@@ -99,9 +103,5 @@
         color: rgba(255,255,255,.8)
       }
     }
-  }
-
-  .player-bar {
-    background: rgba(255,255,255,.2);
   }
 }
