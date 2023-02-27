@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Player from '@/components/player';
 import Button from '@/components/Button';
+import Registration from "@/components/form/Registration"
 export default function Home() {
   const track = {
     id: 1,
@@ -19,6 +20,12 @@ export default function Home() {
       </Head>
       <Player track={track} />
 
+      <div className="form-position">
+        <Registration value={"Имя"} type={"text"} />
+        <Registration value={"Фамилия"} type={"text"} />
+        <Registration value={"password"} type={"password"} />
+        <Registration value={"email"} type={"email"} />
+      </div>
       <Button />
       <Button text={'text'} type={'button'} style={'orange'} />
       <Button
@@ -29,5 +36,5 @@ export default function Home() {
       />
       <Button text={'link'} type={'submit'} link={'https://ya.ru/'} />
     </>
-  );
+  )
 }
