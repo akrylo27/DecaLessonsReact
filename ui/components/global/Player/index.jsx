@@ -7,6 +7,7 @@ export default function Player({ track }) {
   const [percentage, setPercentage] = useState(0);
   const [fullTime, setfullTime] = useState('00:00');
   const [currentTime, setCurrentTime] = useState('00:00');
+  const [currentTimeMove, setCurrentTimeMove] = useState('00:00');
 
   useEffect(() => {
     setAudio(new Audio(track.src));
@@ -18,13 +19,12 @@ export default function Player({ track }) {
       setfullTime(getTimerMusic(audio.duration));
       setCurrentTime(getTimerMusic(audio.currentTime));
       setPercentage(pr);
-
-      if (pr >= 100) {
-        audio.currentTime = 0;
-        audio.pause();
-        setIsPlay(true);
-      }
     });
+
+    audio.addEventListener('ended', () => {
+      audio.currentTime = 0;
+      setIsPlay(true);
+    })
   };
 
   const play = () => {
@@ -78,6 +78,14 @@ export default function Player({ track }) {
     audioTimeUpdate();
   };
 
+  const rewindMove = (e) => {
+    const elem = document.querySelector("#player")
+    const rect = elem.getBoundingClientRect();
+
+    setCurrentTimeMove(getTimerMusic((e.pageX / rect.width) * audio.duration))
+    elem.children[0].children[0].style.width = `${(e.pageX / rect.width) * 100}%`
+  };
+
   useEffect(() => {
     const keyCode = (e) => {
       if (e.keyCode === 32) {
@@ -91,8 +99,9 @@ export default function Player({ track }) {
 
   return (
     <>
-      <div className={styles.player}>
+      <div className={styles.player} id="player" onMouseMove={rewindMove}>
         <div className={styles.playerBar} onClick={rewind}>
+          <div className={styles.playerBar__progressMove} time={currentTimeMove}></div>
           <div className={styles.playerBar__progress} style={{width: `${percentage}%`}}></div>
         </div>
 
