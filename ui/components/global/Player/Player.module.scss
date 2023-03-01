@@ -38,10 +38,9 @@
     background: linear-gradient(to left, var(--player-color-one), var(--player-color-two));
   }
   &__progressMove {
-    background: rgba(0,0,0,.15);
+    background: rgba(0,0,0,.08);
     opacity: 0;
     transition: opacity .1s;
-    z-index: 2;
     &:before {
       content: attr(time);
       position: absolute;

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-
-import Audio from './audio'
+import { AudioInit, AudioTime } from './audio'
 
 import styles from '@/ui/components/global/Player/Player.module.scss'
 
@@ -13,14 +12,14 @@ export default function Player({ track }) {
   const [currentTimeMove, setCurrentTimeMove] = useState('00:00');
 
   useEffect(() => {
-    setAudio(Audio(track.src));
+    setAudio(AudioInit(track.src));
   }, []);
 
   const audioTimeUpdate = () => {
     audio.addEventListener('timeupdate', () => {
       let pr = (audio.currentTime / audio.duration) * 100;
-      setfullTime(getTimerMusic(audio.duration));
-      setCurrentTime(getTimerMusic(audio.currentTime));
+      setfullTime(AudioTime(audio.duration));
+      setCurrentTime(AudioTime(audio.currentTime));
       setPercentage(pr);
     });
 
@@ -42,36 +41,6 @@ export default function Player({ track }) {
     audio.pause();
   };
 
-  const getTimerMusic = (time) => {
-    let hour = Math.floor(time / (60 * 60)),
-      resultMinutes = time % (60 * 60),
-      minute = Math.floor(resultMinutes / 60),
-      resultSeconds = resultMinutes % 60,
-      second = Math.ceil(resultSeconds),
-      fullTime;
-
-    if (second === 60) {
-      second = 0;
-      minute = minute + 1;
-    }
-    if (second < 10) {
-      second = '0' + second;
-    }
-    if (minute === 60) {
-      minute = 0;
-      hour = hour + 1;
-    }
-    if (minute < 10) {
-      minute = '0' + minute;
-    }
-    if (hour === 0) {
-      fullTime = minute + ':' + second;
-    } else {
-      fullTime = hour + ':' + minute + ':' + second;
-    }
-    return fullTime;
-  };
-
   const rewind = (e) => {
     const rect = e.target.getBoundingClientRect();
     const pageX = e.pageX;
@@ -85,7 +54,7 @@ export default function Player({ track }) {
     const elem = document.querySelector("#player")
     const rect = elem.getBoundingClientRect();
 
-    setCurrentTimeMove(getTimerMusic((e.pageX / rect.width) * audio.duration))
+    setCurrentTimeMove(AudioTime((e.pageX / rect.width) * audio.duration))
     elem.children[0].children[0].style.width = `${(e.pageX / rect.width) * 100}%`
   };
 
