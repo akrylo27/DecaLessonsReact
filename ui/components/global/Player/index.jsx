@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react';
+
+import Audio from './audio'
+
 import styles from '@/ui/components/global/Player/Player.module.scss'
 
 export default function Player({ track }) {
@@ -10,7 +13,7 @@ export default function Player({ track }) {
   const [currentTimeMove, setCurrentTimeMove] = useState('00:00');
 
   useEffect(() => {
-    setAudio(new Audio(track.src));
+    setAudio(Audio(track.src));
   }, []);
 
   const audioTimeUpdate = () => {
