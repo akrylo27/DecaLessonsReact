@@ -4,9 +4,9 @@ import Player from '@/ui/components/global/Player';
 export default function Layout({ children }) {
   const track = {
     id: 1,
-    author: 'Pham feat. Filip',
-    name: 'Squaad',
-    src: '/audio/pham.mp3',
+    author: 'Jay Hardwey vs. Zedd',
+    name: 'Stardust The Night',
+    src: '/audio/JayHardwey.mp3',
   };
 
   return (
