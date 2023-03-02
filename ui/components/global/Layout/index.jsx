@@ -4,9 +4,9 @@ import Player from '@/ui/components/global/Player';
 export default function Layout({ children }) {
   const track = {
     id: 1,
-    author: 'Jay Hardwey vs. Zedd',
-    name: 'Stardust The Night',
-    src: '/audio/JayHardwey.mp3',
+    author: 'Marin Garrix & Calvin Sparks',
+    name: 'Summer Days',
+    src: '/audio/martin.mp3',
   };
 
   return (

@@ -11,6 +11,8 @@ export default function Player({ track }) {
   const [fullTime, setfullTime] = useState('00:00');
   const [currentTime, setCurrentTime] = useState('00:00');
   const [currentTimeMove, setCurrentTimeMove] = useState('00:00');
+  const [volume, setVolume] = useState(50);
+  const [volumeMove, setVolumeMove] = useState(false)
 
   useEffect(() => {
     setAudio(AudioInit(track.src));
@@ -35,6 +37,8 @@ export default function Player({ track }) {
 
     if (isPlay) {
       audioTimeUpdate();
+
+      audio.volume = volume / 100
       audio.play();
       return;
     }
@@ -66,6 +70,19 @@ export default function Player({ track }) {
     setCurrentTimeMove(AudioTime((e.pageX / rect.width) * audio.duration))
     elem.children[0].children[0].style.width = `${(e.pageX / rect.width) * 100}%`
   };
+
+  const volumes = (e, active) => {
+    setVolumeMove(active)
+
+    if (active) {
+      const rect = e.target.getBoundingClientRect();
+      const offesetX = e.pageX - rect.left
+      const offsetVolume = offesetX / 100
+
+      setVolume(Math.floor(offesetX))
+      audio.volume = offsetVolume < 0 ? 0 : offsetVolume
+    }
+  }
 
   useEffect(() => {
     const keyCode = (e) => {
@@ -100,6 +117,15 @@ export default function Player({ track }) {
               <span>
                 {currentTime} / {fullTime}
               </span>
+            </div>
+            <div
+              className={styles.playerVolume}
+              onMouseMove={(e) => volumes(e, volumeMove)}
+              onMouseDown={(e) => volumes(e, true)}
+              onMouseUp={(e) => volumes(e, false)}
+              onMouseLeave={(e) => volumes(e, false)}
+            >
+              <div className={styles.playerVolume__progress} style={{width: `${volume}%`}}></div>
             </div>
           </div>
         </div>

@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
 
 
-      <div className="form-position">
+      {/* <div className="form-position">
         <Registration value={"Имя"} type={"text"} />
       </div>
       <Button />
@@ -23,7 +23,7 @@ export default function Home() {
         style={'grey'}
         link={'https://ya.ru/'}
       />
-      <Button text={'link'} type={'submit'} link={'https://ya.ru/'} />
+      <Button text={'link'} type={'submit'} link={'https://ya.ru/'} /> */}
     </>
   )
 }
