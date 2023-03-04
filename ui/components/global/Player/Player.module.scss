@@ -27,6 +27,15 @@
   height: 3px;
   transition: height .1s;
   cursor: pointer;
+  &:before {
+    content: '';
+    margin: -10px 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
   &__progress,
   &__progressMove {
     position: absolute;
@@ -133,6 +142,7 @@
     background: linear-gradient(to left, var(--player-color-one), var(--player-color-two));
     pointer-events: none;
     border-radius: 10px;
+    position: relative;
   }
 }
 
