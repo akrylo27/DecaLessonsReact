@@ -88,10 +88,10 @@
   border-radius: 5px;
   &:hover,
   &:focus {
-    border: var(--form-color-two);
+    border: 1px solid var(--form-color-one);
   }
   &:active {
-    border: var(--form-color-two);
+    border: 1px solid var(--form-color-one);
   }
 }
 
