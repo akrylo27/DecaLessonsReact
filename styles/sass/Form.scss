@@ -89,6 +89,7 @@
   &:hover,
   &:focus {
     border: 1px solid var(--form-color-one);
+    transition: all 0.5s;
   }
   &:active {
     border: 1px solid var(--form-color-one);
@@ -216,9 +217,12 @@
   &:focus {
     /* filter: opacity(90%); */
     filter: contrast(125%);
+    border: 1px solid var(--form-color-one);
+    transition: all 0.5s;
   }
   &:active {
     filter: contrast(150%);
+    border: 1px solid var(--form-color-one);
   }
 }
 
