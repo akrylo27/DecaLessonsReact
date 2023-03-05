@@ -281,7 +281,15 @@
   display: flex;
   justify-content: space-between;
   font-size: 12px;
-  a {
+  p a {
     cursor: pointer;
+    padding-left: 5px;
+  }
+}
+
+//временный класс, потом надо удалить
+.nav-wrapper {
+  :first-child {
+    margin: 0 10px;
   }
 }
