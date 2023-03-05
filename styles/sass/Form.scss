@@ -1,18 +1,12 @@
 :root {
   --form-color-green: #1a7d36;
   --form-color-blue: #3728be;
-  --form-color-grey: #6e6e6e;
+  --form-color-grey: #353535;
   --form-color-red: #e32636;
 
   --form-color-one: #ff5d0f;
   --form-color-one-light: #fff4ee;
   --form-color-two: #ff9c0f;
-}
-
-input {
-  -webkit-appearance: checkbox;
-  -webkit-font-smoothing: antialiased;
-  resize: none;
 }
 
 //*Закрыть форму
@@ -90,7 +84,7 @@ input {
   width: 100%;
   min-height: 50px;
   font-size: 15px;
-  color: black;
+  color: var(--form-color-one-light);
   border-radius: 5px;
   &:hover,
   &:focus {
@@ -102,7 +96,7 @@ input {
 }
 
 .input::placeholder {
-  color: rgb(185, 185, 185);
+  color: rgb(215, 215, 215);
 }
 
 .input-color {
@@ -122,13 +116,10 @@ input {
 
 .input-variant {
   &_outlined {
-    background: var(--player-color-one-light);
+    background: transparent;
   }
 }
 .input-size {
-  &_range {
-    width: 80px;
-  }
   &_xs {
     width: 50px;
     height: 20px;
@@ -157,7 +148,7 @@ input {
     width: 100%;
     height: 40px;
     font-size: 20px;
-    border: 2px solid;
+    border: 1px solid;
   }
 }
 //*Checkbox
