@@ -3,9 +3,9 @@ import Input from './Input';
 import Checkbox from './Checkbox';
 import Button from './Button';
 
-function Registration({ value, type }) {
-  const [isValue, setIsValue] = useState(value);
-  const [password, setPassword] = useState(null);
+function Registration(props) {
+  const [isValue, setIsValue] = useState('');
+  const [password, setPassword] = useState('');
   const [checked, setChecked] = useState(false);
 
   const handleChangeValue = (event) => {
@@ -22,11 +22,12 @@ function Registration({ value, type }) {
     setChecked(!checked);
   };
   return (
-    <form className={'registration-position'}>
+    <form className={'form-wrapper'}>
+      <h2 className='form-header'>Войти</h2>
       <Input
         type={'text'}
         placeholder={'Введите имя *'}
-        size={'xl'}
+        size={'xg'}
         variant={'outlined'}
         value={isValue}
         onChange={handleChangeValue}
@@ -34,7 +35,7 @@ function Registration({ value, type }) {
       <Input
         type={'password'}
         placeholder={'Пароль *'}
-        size={'xl'}
+        size={'xg'}
         variant={'outlined'}
         value={password}
         onChange={handleChangePassword}
