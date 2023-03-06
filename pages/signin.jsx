@@ -8,13 +8,5 @@ export default function SignIn() {
     email: true,
   };
 
-  return user.email ? (
-    <div className='container'>
-      <Authorization />
-    </div>
-  ) : (
-    <div className='container'>
-      <Registration />
-    </div>
-  );
+  return user.email ? <Authorization /> : <Registration />;
 }
