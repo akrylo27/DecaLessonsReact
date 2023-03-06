@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 function Input({ type, placeholder, size, color, variant, value, onChange }) {
   return (
@@ -11,7 +11,7 @@ function Input({ type, placeholder, size, color, variant, value, onChange }) {
         onChange={onChange}
       />
     </div>
-  )
+  );
 }
 
-export default Input
+export default Input;

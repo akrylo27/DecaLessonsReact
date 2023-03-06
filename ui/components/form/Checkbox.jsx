@@ -1,17 +1,18 @@
-import React from "react"
+import React from 'react';
 
-function Checkbox({ type, checked, onChange }) {
+function Checkbox({ type, checked, onChange, size, text }) {
   return (
-    <div>
+    <div className='checkbox-wrapper'>
       <input
         type={type}
-        name="checkbox"
+        name='checkbox'
         checked={checked}
         onChange={onChange}
-        className={"checkbox-position"}
+        className={`checkbox-position checkbox-size_${size}`}
       />
+      <span className='checkbox-span'>{text}</span>
     </div>
-  )
+  );
 }
 
-export default Checkbox
+export default Checkbox;

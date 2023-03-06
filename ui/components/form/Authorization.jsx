@@ -2,29 +2,20 @@ import React, { useState } from 'react';
 import Input from './Input';
 import Checkbox from './Checkbox';
 import Button from './Button';
+import Link from 'next/link';
 
-function Registration(props) {
+function Authorization(props) {
   const [isValue, setIsValue] = useState('');
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
   const [checked, setChecked] = useState(false);
 
   const handleChangeValue = (event) => {
     console.log(event.target.value);
     setIsValue(event.target.value);
   };
-
-  const handleChangeEmail = (event) => {
-    setEmail(event.target.value);
-  };
   const handleChangePassword = (event) => {
     console.log(event.target.value);
     setPassword(event.target.value);
-  };
-
-  const handleConfirmPassword = (event) => {
-    setConfirmPassword(event.target.value);
   };
 
   const handleChecked = (event) => {
@@ -33,7 +24,7 @@ function Registration(props) {
   };
   return (
     <form className={'form-wrapper'}>
-      <h2 className='form-header'>Регистрация</h2>
+      <h2 className='form-header'>Войти</h2>
       <Input
         type={'text'}
         placeholder={'Введите имя *'}
@@ -43,14 +34,6 @@ function Registration(props) {
         onChange={handleChangeValue}
       />
       <Input
-        type={'text'}
-        placeholder={'Введите email *'}
-        size={'xg'}
-        variant={'outlined'}
-        value={email}
-        onChange={handleChangeEmail}
-      />
-      <Input
         type={'password'}
         placeholder={'Пароль *'}
         size={'xg'}
@@ -58,30 +41,30 @@ function Registration(props) {
         value={password}
         onChange={handleChangePassword}
       />
-      <Input
-        type={'password'}
-        placeholder={'Подтвердите пароль *'}
-        size={'xg'}
-        variant={'outlined'}
-        value={confirmPassword}
-        onChange={handleConfirmPassword}
-      />
       <Checkbox
         type={'checkbox'}
         color={'info'}
         checked={checked}
         onChange={handleChecked}
         size={'md'}
-        text={'Подтверждаю обработку персональных данных'}
+        text={'Запомнить меня'}
       />
       <Button
         type={'submit'}
         color={'primary'}
         size={'lg'}
         variant={'outlined'}
-        text={'Зарегистрироваться'}
+        text={'Войти'}
       />
-
+      <div className='forget-password'>
+        <span>
+          <a href='#'>Забыли пароль?</a>
+        </span>
+        <p>
+          Нет аккаунта?
+          <Link href='/signup'>Зарегистрироваться</Link>
+        </p>
+      </div>
       <>
         {/* Шаблоны */}
         {/* Input */}
@@ -158,4 +141,4 @@ function Registration(props) {
   );
 }
 
-export default Registration;
+export default Authorization;

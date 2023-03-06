@@ -1,16 +1,15 @@
-import React from "react"
+import React from 'react';
 
-function Button({ type, color, size, variant }) {
+function Button({ type, color, size, variant, text }) {
   return (
     <div>
       <button
         type={type}
-        className={`btn btn-color_${color} btn-size_${size} btn-variant_${variant}`}
-      >
-        Нажать
+        className={`btn btn-color_${color} btn-size_${size} btn-variant_${variant}`}>
+        {text}
       </button>
     </div>
-  )
+  );
 }
 
-export default Button
+export default Button;
