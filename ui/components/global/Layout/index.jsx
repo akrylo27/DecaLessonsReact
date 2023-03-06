@@ -1,7 +1,6 @@
 import Header from '@/ui/components/global/Header';
 import Player from '@/ui/components/global/Player';
-import PageMain from '../../Main/PageMain';
-import Link from 'next/link';
+import Navigation from '../../Navigation/Navigation';
 
 export default function Layout({ children }) {
   const track = {
@@ -16,8 +15,8 @@ export default function Layout({ children }) {
       <div className='wrapper'>
         <Header />
         {children}
+        <Navigation />
         <Player track={track} />
-        <Link href='/pagemain'>Мой компонент</Link>
       </div>
     </>
   );

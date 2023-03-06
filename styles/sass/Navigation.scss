@@ -1,0 +1,24 @@
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.page-main-wrapper {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(1fr, 1fr);
+  grid-template-rows: repeat(6, 220px);
+  gap: 10px;
+  height: 100%;
+}
+
+.nav-list-main {
+  display: flex;
+  padding: 10px 0;
+}
+
+.nav-item {
+  margin: 0 20px 0 0;
+}
