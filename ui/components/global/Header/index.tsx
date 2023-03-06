@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styles from './Header.module.scss';
 
 import Logo from '@/ui/components/global/Logo';
+import Search from '../../Search/Search';
 
 export default function Header() {
   return (
@@ -11,6 +12,7 @@ export default function Header() {
         <div className='container'>
           <div className={styles.header__box}>
             <Logo />
+            <Search />
             <nav className='nav-wrapper'>
               <Link href='/signin'>Войти</Link>
               <Link href='/signup'>Регистрация</Link>

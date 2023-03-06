@@ -1,0 +1,22 @@
+.search {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  .magnifyingglass {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  .input[type="text"] {
+    filter: none;
+    background: none;
+    border: none;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    height: 30px;
+    border-radius: 5px;
+  }
+}
