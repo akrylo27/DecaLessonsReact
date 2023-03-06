@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import { HiMagnifyingGlass } from 'react-icons/hi2';
 import { IconContext } from 'react-icons';
-
 import Input from '../form/Input';
-
-const artistArray = [
-  { name: 'Morgenshtern' },
-  { name: 'Big Baby Tape' },
-  { name: 'Kizaru' },
-  { name: 'Martin Garrix' },
-  { name: 'Calvin Sparks' },
-];
 
 const Search = () => {
   const [artists, setArtist] = useState([]);
@@ -19,12 +12,11 @@ const Search = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setArtist(
-          artistArray.filter((i) => {
-            return i.name.toLowerCase().match(query);
-          })
-        );
-      } catch (error) {}
+        const { data } = await axios.get(`https://api.dless.ru/api/audios`);
+        setArtist(data.data);
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchData();
   }, [query]);
@@ -47,12 +39,13 @@ const Search = () => {
           onChange={handleChangeFilter}
         />
       </div>
+
       <div>
-        {artists.map((artist, index) => {
+        {artists.map((artist) => {
           return (
-            <div key={index}>
+            <div key={artist.id}>
               <ul>
-                <li>{artist.name}</li>
+                <li>{artist.id}</li>
               </ul>
             </div>
           );
