@@ -11,7 +11,7 @@ const Search = () => {
         <HiMagnifyingGlass />
         <Input
           type={'text'}
-          placeholder={'Трек, Артист'}
+          placeholder={'Трек, Артист...'}
           size={'xg'}
           variant={'dark'}
         />
