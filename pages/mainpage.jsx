@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '@/ui/components/global/Navigation/Card/Card';
+import Card from '@/ui/components/global/Navigation/Card/Cards';
 
 function Mainpage(props) {
   const listCategories = ['New', 'Top-charts', 'Home', 'Party Dance'];
@@ -8,10 +8,10 @@ function Mainpage(props) {
   const listBooks = ['Book 1', 'Book 2', 'Book 3', 'Book 4'];
   return (
     <div className='container'>
-      <Card headers={'Categories'} subHeaders={listCategories} />
-      <Card headers={'Genres'} subHeaders={listGenres} />
-      <Card headers={'Podcasts'} subHeaders={listPodcasts} />
-      <Card headers={'Books'} subHeaders={listBooks} />
+      <Card headers={'Categories'} title={listCategories} />
+      <Card headers={'Genres'} title={listGenres} />
+      <Card headers={'Podcasts'} title={listPodcasts} />
+      <Card headers={'Books'} title={listBooks} />
     </div>
   );
 }

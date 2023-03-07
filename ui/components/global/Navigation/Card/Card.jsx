@@ -1,12 +1,21 @@
-import React from 'react';
-import Typography from './Typography';
+import React, { useState } from 'react';
 
-function Card({ headers, subHeaders }) {
+function Card({ headers, title }) {
+  const [isTitle, setIsTexts] = useState(title);
+
+  const musicCard = isTitle.map((title) => {
+    return (
+      <div className='music-card-item'>
+        <p>{title}</p>
+      </div>
+    );
+  });
+
   return (
-    <section className='card'>
+    <div className='music-card-wrapper card'>
       <h2>{headers}</h2>
-      <Typography subHeaders={subHeaders} />
-    </section>
+      <div className='music-card-position'>{musicCard}</div>
+    </div>
   );
 }
 
