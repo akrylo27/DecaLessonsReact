@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '@/ui/components/global/Navigation/Navbar';
 import Card from '@/ui/components/global/Navigation/Card/Card';
 
 function Podcasts(props) {

@@ -5,13 +5,13 @@ function Typography({ subHeaders }) {
 
   const res = isTexts.map((text) => {
     return (
-      <div className='subHeaders-wrapper-item'>
+      <div className='titles-wrapper'>
         <p>{text}</p>
       </div>
     );
   });
 
-  return <div className='subHeaders-wrapper'>{res}</div>;
+  return <div className='titles-card'>{res}</div>;
 }
 
 export default Typography;

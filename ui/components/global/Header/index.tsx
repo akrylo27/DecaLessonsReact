@@ -13,10 +13,6 @@ export default function Header() {
           <div className={styles.header__box}>
             <Logo />
             <Navigation />
-            <nav className='link-wrapper'>
-              <Link href='/signin'>Войти</Link>
-              <Link href='/signup'>Регистрация</Link>
-            </nav>
           </div>
         </div>
       </header>

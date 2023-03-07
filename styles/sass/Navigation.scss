@@ -5,18 +5,22 @@ li {
   list-style-type: none;
 }
 
-/* .page-main-wrapper {
-  display: grid;
-  grid-template-columns: repeat(1fr, 1fr);
-  grid-template-rows: repeat(5, 220px);
-  gap: 10px;
-  height: 100%;
-} */
-
-.nav-item {
-  margin: 0 10px;
+.nav-main {
+  display: flex;
 }
 
-.link-wrapper a {
-  margin: 0 10px 0 0;
+.nav-list-main {
+  display: flex;
+}
+
+.nav-list-item {
+  padding: 0 18px;
+}
+
+.link-wrapper {
+  padding: 0 0 0 50px;
+
+  a {
+    margin: 0 10px 0 0;
+  }
 }

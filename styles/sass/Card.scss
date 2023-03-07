@@ -10,13 +10,8 @@
     text-align: center;
   }
 }
-.subHeaders-wrapper {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 
-.subHeaders-wrapper-item {
+.titles-wrapper {
   margin: 20px 10px;
   width: 140px;
   height: 120px;
@@ -34,4 +29,10 @@
     filter: contrast(120%);
     transition: all 0.5s;
   }
+}
+
+.titles-card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
