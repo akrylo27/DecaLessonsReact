@@ -51,7 +51,6 @@ const Search = () => {
   };
 
   const handleClickFilter = (value) => {
-    console.log(value);
     setinputValue(value);
   };
 
@@ -69,9 +68,8 @@ const Search = () => {
         />
         <div className='live'>
           {serchAudio.map((name, index) => (
-            <div className='item'>
+            <div className='item' key={index}>
               <Input
-                key={index}
                 onClick={() => handleClickFilter(name)}
                 value={name}
                 type={'text'}
