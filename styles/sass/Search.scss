@@ -1,22 +1,29 @@
 .search {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  .magnifyingglass {
-    height: 30px;
-    width: 30px;
-    margin-right: 10px;
-  }
+  .search_input {
+    display: flex;
+    .magnifyingglass {
+      height: 30px;
+      width: 30px;
+      margin-right: 10px;
+    }
 
-  .input[type="text"] {
-    // filter: none;
+  }
+  .input[type='text'] {
     background: none;
     border: none;
-    width: 100%;
     margin: 0;
     padding: 10px;
     height: 30px;
     border-radius: 5px;
+  }
+
+  .live {
+    display: flex;
+    flex-direction: column;
+
   }
 }
