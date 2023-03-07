@@ -11,32 +11,32 @@
   }
 }
 
-.music-card-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.music-card-position {
-  display: flex;
-  justify-content: center;
-}
-
-.music-card-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 10px;
-  width: 140px;
-  height: 120px;
-  background: var(--card-color-one);
-  font-size: 20px;
-  border-radius: 5px;
-  filter: contrast(80%);
-  color: var(--card-color-one-light);
-  &:hover,
-  &:focus {
-    cursor: pointer;
-    filter: contrast(120%);
-    transition: all 0.5s;
+.music-card {
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &_position {
+    display: flex;
+    justify-content: center;
+  }
+  &_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 10px;
+    width: 140px;
+    height: 120px;
+    background: var(--card-color-one);
+    font-size: 20px;
+    border-radius: 5px;
+    filter: contrast(80%);
+    color: var(--card-color-one-light);
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      filter: contrast(120%);
+      transition: all 0.5s;
+    }
   }
 }
