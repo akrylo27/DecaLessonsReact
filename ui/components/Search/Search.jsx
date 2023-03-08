@@ -18,8 +18,8 @@ const Search = () => {
             Authorization: `Bearer ${token}`,
           },
         }).then(async (response) => {
-          console.log( await response.json() )
-
+          console.log(await response.json());
+          console.log(1);
           // setserchAudio([]);
           // const { data } = await response.json();
           // let searchQuery = inputValue.toLowerCase();
