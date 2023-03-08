@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from './Header.module.scss';
 
 import Logo from '@/ui/components/global/Logo';
-import Search from '../../Search/Search';
+import Search from '../Search/Search';
 
 export default function Header() {
   return (
