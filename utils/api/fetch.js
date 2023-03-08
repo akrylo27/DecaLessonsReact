@@ -5,13 +5,13 @@ const fetchAPI = async (url, request, parms = null) => {
   try {
     switch (request) {
       case 'get':
-        const response = await fetch(`${API_URL}/${url}`, {
+        const getResponse = await fetch(`${API_URL}/${url}`, {
           method: 'get',
           headers: {
             Authorization: `Bearer ${API_TOKEN}`,
           },
         });
-        return response;
+        return getResponse;
       case 'post':
         await fetch(`${API_URL}/${url}`, {
           method: 'post',
@@ -22,6 +22,14 @@ const fetchAPI = async (url, request, parms = null) => {
         });
         console.log(parms);
         break;
+      default:
+        const defResponse = await fetch(`${API_URL}/${url}`, {
+          method: 'get',
+          headers: {
+            Authorization: `Bearer ${API_TOKEN}`,
+          },
+        });
+        return defResponse;
     }
   } catch (error) {
     console.log(error);
