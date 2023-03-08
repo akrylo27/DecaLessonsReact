@@ -12,10 +12,11 @@ export default function Layout({ children }) {
     src: '/audio/martin.mp3',
   };
 
-  useEffect(() => {
-    const token = '8772fc18d6e25c48aebf0274c2e977db022199dc0bde9e3c5e1fc7e9e216df31475ee2277479e194c191db2d0fb3aba2ee2e48d35ea37cdfa1b1d5fb72e415e9ed644b1c1fc676e183858323db98d8729ee0ce2d8dfacf55e7647e130ff9dc7d41e9475a30723f419a0a39f8e51b57ae20dd3086df669204fbe03a2f6209d2e5'
+  const apiUrl = 'https://api.dless.ru'
+  const token = '0690a355926f5ca9ec06ec6ab069eb4df4ff314b45a3106d54658e956482374a3f6df9b1725dcc385c923c551283eb55975fdac143b9910b7f7a33fd3c1ac315d8f2845a8f84010f1ff519a896cee80e03d8173cf96a50eefd0eb4d26a13bb358f9cb18b80139fe0219cb1368dcb5b75d3471a34f85a51b5097a71ab313dc285'
 
-    fetch('https://api.dless.ru/api/audios', {
+  useEffect(() => {
+    fetch(`${apiUrl}/api/audios`, {
       method: 'get',
       headers: {
         Authorization: `Bearer ${token}`
@@ -27,8 +28,43 @@ export default function Layout({ children }) {
 
   const style = {
     li: {
-      padding: "10px 0"  
+      padding: "10px 0"
     }
+  }
+
+  const auth = (e) => {
+    e.preventDefault()
+
+    const parms = {
+      identifier: 'test@dless.ru',
+      password: 'Test12345',
+    }
+
+    fetch(`${apiUrl}/auth/local`, {
+      method: 'post',
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(parms)
+    })
+  }
+
+  const regs = (e) => {
+    e.preventDefault()
+
+    const parms = {
+      username: 'Krylov',
+      email: 'krylov@dless.com',
+      password: 'Krylov12345',
+    }
+
+    fetch(`${apiUrl}/auth/local/register`, {
+      method: 'post',
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(parms)
+    })
   }
 
   return (
@@ -38,6 +74,23 @@ export default function Layout({ children }) {
         { children }
 
         <div className='container'>
+          <form onSubmit={auth}>
+            <input type="text" name='identifier' />
+            <input type="text" name='password' />
+            <button type='submit'>
+              Войти
+            </button>
+          </form>
+
+          <form onSubmit={regs}>
+            <input type="text" name='username' />
+            <input type="text" name='email' />
+            <input type="text" name='password' />
+            <button type='submit'>
+              Зарегестрироваться
+            </button>
+          </form>
+
           <h1>Test API audio</h1>
           <ul>
             {music?.data?.map(({ id, attributes: { author, name, path }}) => (
