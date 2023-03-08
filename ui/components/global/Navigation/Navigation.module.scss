@@ -6,6 +6,9 @@
   }
   &_item {
     padding: 0 18px;
+    span {
+      cursor: pointer;
+    }
   }
   &_link {
     a {
@@ -16,6 +19,13 @@
 .drop-hover-on {
   visibility: hidden;
   &:focus {
+    visibility: visible;
+  }
+}
+
+.hoverDiv {
+  visibility: hidden;
+  &:hover {
     visibility: visible;
   }
 }

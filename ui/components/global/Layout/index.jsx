@@ -1,6 +1,6 @@
 import Header from '@/ui/components/global/Header';
 import Player from '@/ui/components/global/Player';
-import Drops from '@/ui/components/global/Dropdown'; /* Не забудь удалить */
+/* import Drops from '@/ui/components/global/Dropdown'; /* Не забудь удалить */
 
 export default function Layout({ children }) {
   const track = {
@@ -15,7 +15,7 @@ export default function Layout({ children }) {
       <Header />
       {children}
       <Player track={track} />
-      <Drops /> {/* Не забудь удалить */}
+      {/* <Drops /> {/* Не забудь удалить */}
     </div>
   );
 }
