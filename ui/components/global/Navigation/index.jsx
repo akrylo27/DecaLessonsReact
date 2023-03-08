@@ -13,16 +13,16 @@ export default function Navigation(props) {
       <nav className={styles.navMain}>
         <ul className={styles.navMain_list}>
           <li className={styles.navMain_item}>
-            <Link href='/genres'>Genres</Link>
+            <Link href='/#'>Music</Link>
           </li>
           <li className={styles.navMain_item}>
-            <Link href='/genres'>Top charts</Link>
+            <Link href='/#'>Top charts</Link>
           </li>
           <li className={styles.navMain_item}>
-            <Link href='/genres'>My playlists</Link>
+            <Link href='/#'>My playlists</Link>
           </li>
           <li className={styles.navMain_item}>
-            <Link href='/genres'>Download</Link>
+            <Link href='/#'>Download</Link>
           </li>
         </ul>
       </nav>

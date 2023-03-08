@@ -1,0 +1,18 @@
+.dropWrapper {
+  margin: 0 auto;
+  width: 850px;
+  height: 450px;
+  border: 2px solid white;
+  &_list {
+    display: flex;
+    justify-content: center;
+  }
+  &_item {
+  }
+}
+
+.dropList {
+  &_item {
+    margin: 0 auto;
+  }
+}
