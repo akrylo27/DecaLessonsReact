@@ -1,22 +1,24 @@
 import qs from 'qs';
 
-const SearchUrl = (input) => {
+const SearchByNameAuthor = (input = null) => {
   const query = qs.stringify(
     {
-      filters: {
-        $or: [
-          {
+      $or: [
+        {
+          fields: ['name'],
+          filters: {
             name: {
               $containsi: input,
             },
           },
-          {
+          fields: ['author'],
+          filters: {
             author: {
               $containsi: input,
             },
           },
-        ],
-      },
+        },
+      ],
     },
     {
       encodeValuesOnly: true, // prettify URL
@@ -25,4 +27,4 @@ const SearchUrl = (input) => {
   return query;
 };
 
-export { SearchUrl };
+export { SearchByNameAuthor };

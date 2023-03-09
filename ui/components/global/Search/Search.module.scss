@@ -1,13 +1,8 @@
 .search {
-  display: flex;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  .magnifyingglass {
-    height: 30px;
-    width: 30px;
-    margin-right: 10px;
-  }
-  .input[type="text"] {
+
+  input[type="text"] {
     border-radius: 10px;
     background: none;
     border: none;
@@ -18,12 +13,10 @@
 
   .live {
     position: absolute;
-    top: 60px;
     .item {
       background-color: rgba(255, 255, 255, 0.1);
       margin-bottom: 5px;
       border-radius: 10px;
-
     }
   }
 }
