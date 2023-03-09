@@ -4,6 +4,7 @@ import Input from '@/ui/components/form/Input';
 
 import { SearchByNameAuthor } from './SearchQuery';
 import { fetchAPI } from '@/utils/api/fetch';
+import { debounceFunc } from '@/utils/api/debounce';
 
 import styles from '@/ui/components/global/Search/Search.module.scss';
 
@@ -11,16 +12,22 @@ const Search = () => {
   const [searchAudio, setserchAudio] = useState([]);
   const [inputValue, setinputValue] = useState('');
 
+  const test = (func) => {};
+
+  const getSearch = () => {
+    fetchAPI(`audios?${SearchByNameAuthor(inputValue)}`, 'get').then(
+      async (response) => {
+        const { data } = await response.json();
+        console.log(data);
+        setserchAudio(data);
+      }
+    );
+  };
+
   useEffect(() => {
     try {
       if (inputValue.length > 1) {
-        fetchAPI(`audios?${SearchByNameAuthor(inputValue)}`, 'get').then(
-          async (response) => {
-            const { data } = await response.json();
-            console.log(data);
-            setserchAudio(data);
-          }
-        );
+        debounceFunc(getSearch);
       } else {
         setserchAudio([]);
       }
@@ -48,6 +55,7 @@ const Search = () => {
           variant={'dark'}
           value={inputValue}
           onChange={handleChangeFilter}
+          id={'search'}
         />
 
         <div className={styles.live}>
