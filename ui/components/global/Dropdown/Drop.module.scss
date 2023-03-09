@@ -1,7 +1,7 @@
 .dropWrapper {
   position: fixed;
   left: 0;
-  margin: 10px auto;
+  margin: 0 auto;
   width: 100%;
   height: auto;
 }
@@ -13,6 +13,7 @@
     font-size: 20px;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
   }
   &_item {
     display: flex;
@@ -21,9 +22,12 @@
 
 .dropList {
   &_item {
-    margin: 20px auto;
-    p {
-      margin: 15px 0 0 0;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    a {
+      cursor: pointer;
+      margin: 20px 0 0 0;
     }
   }
 }

@@ -7,7 +7,7 @@ import styles from '@/ui/components/global/Navigation/Navigation.module.scss';
 export default function Navigation(props) {
   const [show, setShow] = useState(false);
 
-  const res = show && <Drops />;
+  const musicLists = show && <Drops />;
 
   return (
     <>
@@ -18,8 +18,12 @@ export default function Navigation(props) {
               onMouseOver={() => setShow(true)}
               onMouseLeave={() => setShow(false)}>
               Music
-              {res}
             </span>
+            <div
+              onMouseOver={() => setShow(true)}
+              onMouseLeave={() => setShow(false)}>
+              {musicLists}
+            </div>
           </li>
           <li className={styles.navMain_item}>
             <span>Top charts</span>
