@@ -45,7 +45,8 @@ const Search = () => {
 
   return (
     <div className={styles.search}>
-      <div onClick={(e) => e.stopPropagation()}>
+      <button>+</button>
+      <div className={styles.search_line}>
         <Input
           type={'text'}
           placeholder={'Трек, Артист...'}
@@ -55,46 +56,44 @@ const Search = () => {
           onChange={handleChangeFilter}
           id={'search'}
         />
+      </div>
 
-        <div className={styles.live}>
-          {searchAudio.attributes ? '' : ''}
-          {searchAudio.map((audio) => (
-            <div className={styles.item} key={audio.id}>
-              <div className={styles.author}>
-                <Input
-                  onClick={() =>
-                    handleClickFilter(`${audio.attributes.author}`)
-                  }
-                  value={`${audio.attributes.author} `}
-                  type={'text'}
-                  size={'xg'}
-                  variant={'dark'}
-                  cursor={'pointer'}
-                  readOnly
-                />
-              </div>
+      <div className={styles.live}>
+        {searchAudio.attributes ? '' : ''}
+        {searchAudio.map((audio) => (
+          <div className={styles.item} key={audio.id}>
+            <div className={styles.author}>
+              <Input
+                onClick={() => handleClickFilter(`${audio.attributes.author}`)}
+                value={`${audio.attributes.author} `}
+                type={'text'}
+                size={'xg'}
+                variant={'dark'}
+                cursor={'pointer'}
+                readOnly
+              />
             </div>
-          ))}
-          {searchAudio.map((audio) => (
-            <div className={styles.item} key={audio.id}>
-              <div className={styles.author}>
-                <Input
-                  onClick={() =>
-                    handleClickFilter(
-                      `${audio.attributes.author} - ${audio.attributes.name}`
-                    )
-                  }
-                  value={`${audio.attributes.author} - ${audio.attributes.name} `}
-                  type={'text'}
-                  size={'xg'}
-                  variant={'dark'}
-                  cursor={'pointer'}
-                  readOnly
-                />
-              </div>
+          </div>
+        ))}
+        {searchAudio.map((audio) => (
+          <div className={styles.item} key={audio.id}>
+            <div className={styles.author}>
+              <Input
+                onClick={() =>
+                  handleClickFilter(
+                    `${audio.attributes.author} - ${audio.attributes.name}`
+                  )
+                }
+                value={`${audio.attributes.author} - ${audio.attributes.name} `}
+                type={'text'}
+                size={'xg'}
+                variant={'dark'}
+                cursor={'pointer'}
+                readOnly
+              />
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
