@@ -5,21 +5,30 @@ import Drops from '../Dropdown';
 import styles from '@/ui/components/global/Navigation/Navigation.module.scss';
 
 export default function Navigation(props) {
+  const [show, setShow] = useState(false);
+
+  const res = show && <Drops />;
+
   return (
     <>
       <nav className={styles.navMain}>
         <ul className={styles.navMain_list}>
           <li className={styles.navMain_item}>
-            <Link href='/music'>Music</Link>
+            <span
+              onMouseOver={() => setShow(true)}
+              onMouseLeave={() => setShow(false)}>
+              Music
+              {res}
+            </span>
           </li>
           <li className={styles.navMain_item}>
-            <Link href='/#'>Top charts</Link>
+            <span>Top charts</span>
           </li>
           <li className={styles.navMain_item}>
-            <Link href='/#'>My playlists</Link>
+            <span>My playlists</span>
           </li>
           <li className={styles.navMain_item}>
-            <Link href='/#'>Download</Link>
+            <span>Download</span>
           </li>
         </ul>
       </nav>
