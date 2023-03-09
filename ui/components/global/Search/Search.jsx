@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import Input from '@/ui/components/form/Input';
 
-import { SearchByNameAuthor } from './SearchQuery';
+import { SearchByAuthor } from './SearchQuery';
 import { fetchAPI } from '@/utils/api/fetch';
 import { debounceFunc } from '@/utils/api/debounce';
 
@@ -12,10 +12,17 @@ const Search = () => {
   const [searchAudio, setserchAudio] = useState([]);
   const [inputValue, setinputValue] = useState('');
 
-  const test = (func) => {};
+  const handleChangeFilter = (e) => {
+    e.preventDefault();
+    setinputValue(e.target.value);
+  };
+
+  const handleClickFilter = (value) => {
+    setinputValue(value);
+  };
 
   const getSearch = () => {
-    fetchAPI(`audios?${SearchByNameAuthor(inputValue)}`, 'get').then(
+    fetchAPI(`audios?${SearchByAuthor(inputValue)}`, 'get').then(
       async (response) => {
         const { data } = await response.json();
         console.log(data);
@@ -27,7 +34,7 @@ const Search = () => {
   useEffect(() => {
     try {
       if (inputValue.length > 1) {
-        debounceFunc(getSearch);
+        debounceFunc(getSearch, 700);
       } else {
         setserchAudio([]);
       }
@@ -35,15 +42,6 @@ const Search = () => {
       console.log(error);
     }
   }, [inputValue]);
-
-  const handleChangeFilter = (e) => {
-    e.preventDefault();
-    setinputValue(e.target.value);
-  };
-
-  const handleClickFilter = (value) => {
-    setinputValue(value);
-  };
 
   return (
     <div className={styles.search}>
@@ -59,6 +57,7 @@ const Search = () => {
         />
 
         <div className={styles.live}>
+          {searchAudio.attributes ? '' : ''}
           {searchAudio.map((audio) => (
             <div className={styles.item} key={audio.id}>
               <div className={styles.author}>

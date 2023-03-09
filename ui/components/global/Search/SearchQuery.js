@@ -1,21 +1,12 @@
 import qs from 'qs';
 
-const SearchByNameAuthor = (input = null) => {
+const SearchByAuthor = (input = null) => {
   const query = qs.stringify(
     {
       filters: {
-        $or: [
-          {
-            name: {
-              $containsi: input,
-            },
-          },
-          {
-            author: {
-              $containsi: input,
-            },
-          },
-        ],
+        author: {
+          $containsi: input,
+        },
       },
     },
     {
@@ -25,4 +16,20 @@ const SearchByNameAuthor = (input = null) => {
   return query;
 };
 
-export { SearchByNameAuthor };
+export { SearchByAuthor };
+
+// filters: {
+//         $or: [
+//           {
+//             name: {
+//               $containsi: input,
+//             },
+//           },
+//           {
+//             author: {
+//               $containsi: input,
+//             },
+//           },
+//         ],
+//       },
+//     }

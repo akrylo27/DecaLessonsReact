@@ -1,4 +1,4 @@
-const debounceFunc = (func) => {
+const debounceFunc = (func, sec) => {
   const debounce = (callback, timeout = 300) => {
     let timer;
 
@@ -12,7 +12,7 @@ const debounceFunc = (func) => {
 
   debounce();
 
-  const db = debounce(func, 500);
+  const db = debounce(func, sec);
 
   document.getElementById('search').addEventListener('keypress', () => {
     db();
