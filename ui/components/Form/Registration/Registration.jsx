@@ -59,7 +59,7 @@ function Registration(props) {
           return response.json();
         }
 
-        throw new Error('Данные не получены');
+        throw new Error('Данные не отправлены');
       })
       .catch((error) => {
         console.log(error);
