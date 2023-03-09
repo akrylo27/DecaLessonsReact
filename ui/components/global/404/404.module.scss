@@ -1,0 +1,15 @@
+.notFoundWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 200px 0;
+  height: auto;
+}
+
+.linkList {
+  display: flex;
+  &_item {
+    list-style-type: none;
+    margin: 80px 10px;
+  }
+}
