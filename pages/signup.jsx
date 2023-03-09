@@ -1,4 +1,4 @@
-import Registration from '@/ui/components/form/Registration';
+import Registration from '@/ui/components/Form/Registration/Registration';
 
 export default function SignUp() {
   return (

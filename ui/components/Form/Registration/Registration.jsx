@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
-import Input from './Input';
-import Checkbox from './Checkbox';
-import Button from './Button';
+import React, { useState, useEffect } from 'react';
+import Input from '../Input/Input';
+import Checkbox from '../Checkbox';
+import Button from '../Button';
+
+import styles from '@/ui/components/Form/Registration/Registration.module.scss';
 
 function Registration(props) {
-  const [isValue, setIsValue] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [checked, setChecked] = useState(false);
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
+
   const handleChangeValue = (event) => {
     console.log(event.target.value);
-    setIsValue(event.target.value);
+    setName(event.target.value);
   };
 
   const handleChangeEmail = (event) => {
@@ -31,15 +36,42 @@ function Registration(props) {
     console.log(event.target.value);
     setChecked(!checked);
   };
+
+  const regs = (e) => {
+    e.preventDefault();
+
+    const parms = {
+      username: name,
+      email: email,
+      password: password,
+    };
+
+    fetch(`${API_URL}/auth/local/register`, {
+      method: 'post',
+      headers: {
+        Authorization: `Bearer ${API_TOKEN}`,
+      },
+      body: JSON.stringify(parms),
+    });
+  };
+
+  useEffect(() => {
+    //first;
+
+    return () => {
+      //second;
+    };
+  }, []);
+
   return (
-    <form className={'form-wrapper'}>
-      <h2 className='form-header'>Регистрация</h2>
+    <form className={styles.form_wrapper} onSubmit={regs}>
+      <h2 className={styles.form_header}>Регистрация</h2>
       <Input
         type={'text'}
         placeholder={'Введите имя *'}
         size={'xg'}
         variant={'outlined'}
-        value={isValue}
+        value={name}
         onChange={handleChangeValue}
       />
       <Input
