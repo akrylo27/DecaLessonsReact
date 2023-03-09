@@ -55,7 +55,11 @@ function Registration(props) {
       body: JSON.stringify(parms),
     })
       .then((response) => {
-        console.log(response);
+        if (response.ok) {
+          return response.json();
+        }
+
+        throw new Error('Данные не получены');
       })
       .catch((error) => {
         console.log(error);
