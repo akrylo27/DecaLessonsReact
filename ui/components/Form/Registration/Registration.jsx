@@ -50,18 +50,17 @@ function Registration(props) {
       method: 'post',
       headers: {
         Authorization: `Bearer ${API_TOKEN}`,
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(parms),
-    });
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
-
-  useEffect(() => {
-    //first;
-
-    return () => {
-      //second;
-    };
-  }, []);
 
   return (
     <form className={styles.form_wrapper} onSubmit={regs}>
