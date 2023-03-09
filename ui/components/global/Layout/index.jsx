@@ -13,7 +13,7 @@ export default function Layout({ children }) {
   };
 
   const apiUrl = 'https://api.dless.ru/api'
-  const token = '0690a355926f5ca9ec06ec6ab069eb4df4ff314b45a3106d54658e956482374a3f6df9b1725dcc385c923c551283eb55975fdac143b9910b7f7a33fd3c1ac315d8f2845a8f84010f1ff519a896cee80e03d8173cf96a50eefd0eb4d26a13bb358f9cb18b80139fe0219cb1368dcb5b75d3471a34f85a51b5097a71ab313dc285'
+  const token = '91bf688e104b4f9e306f9bf3b3d8c027907290568bda112aee3552b5d7411a737780918988771cf811d338aa644f72311bb1b25c3357e000b43ed3fa9f0401e46efb7e846c685382ee6c0af8254f1b1a506df85389e4e59d75ed46942897cd3dc3952c818307f6a2500f344cdff2c5537f4ac6433bc20f56152edc2688ce2b57'
 
   useEffect(() => {
     fetch(`${apiUrl}/audios`, {
@@ -36,16 +36,19 @@ export default function Layout({ children }) {
     e.preventDefault()
 
     const parms = {
-      identifier: 'test@dless.ru',
-      password: 'Test12345',
-    }
+        identifier: 'test@gmail.com',
+        password: 'Test12345',
+    };
 
     fetch(`${apiUrl}/auth/local`, {
-      method: 'post',
+      method: 'POST',
       headers: {
-        Authorization: `Bearer ${token}`
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(parms)
+      body: JSON.stringify(parms),
+    }).then(async resp => {
+      console.log(await resp.json())
     })
   }
 
@@ -53,17 +56,18 @@ export default function Layout({ children }) {
     e.preventDefault()
 
     const parms = {
-      username: 'Krylov',
-      email: 'krylov@dless.com',
-      password: 'Krylov12345',
+      username: 'UserBill4',
+      email: 'paseon71@gmail.com',
+      password: 'Krylov12345'
     }
 
     fetch(`${apiUrl}/auth/local/register`, {
-      method: 'post',
+      method: 'POST',
       headers: {
-        Authorization: `Bearer ${token}`
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(parms)
+      body: JSON.stringify(parms),
     })
   }
 
