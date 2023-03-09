@@ -3,6 +3,7 @@ import Input from './Input';
 import Checkbox from './Checkbox';
 import Button from './Button';
 import Link from 'next/link';
+import { fetchAPI } from '@/utils/api/fetch';
 
 function Authorization(props) {
   const [isValue, setIsValue] = useState('');
@@ -22,8 +23,19 @@ function Authorization(props) {
     console.log(event.target.value);
     setChecked(!checked);
   };
+
+  const auth = (e) => {
+    e.preventDefault();
+
+    const parms = {
+      email: 'test@gmail.ru',
+      password: 'Test1234',
+    };
+
+    fetchAPI(`auth/local`, 'post', parms);
+  };
   return (
-    <form className={'form-wrapper'}>
+    <form className={'form-wrapper'} onSubmit={auth}>
       <h2 className='form-header'>Войти</h2>
       <Input
         type={'text'}
