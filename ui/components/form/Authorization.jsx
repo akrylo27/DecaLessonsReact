@@ -28,7 +28,7 @@ function Authorization(props) {
     e.preventDefault();
 
     const parms = {
-      email: 'test@gmail.ru',
+      identifier: 'test@gmail.ru',
       password: 'Test1234',
     };
 
