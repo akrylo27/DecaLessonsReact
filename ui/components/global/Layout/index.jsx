@@ -15,7 +15,6 @@ export default function Layout({ children }) {
       <Header />
       {children}
       <Player track={track} />
-      {/* <Drops /> {/* Не забудь удалить */}
     </div>
   );
 }
