@@ -1,5 +1,5 @@
-import Registration from '@/ui/components/Form/Registration/Registration';
-import Authorization from '@/ui/components/Form/Authorization';
+import Registration from '@/ui/components/form/Registration/Registration';
+import Authorization from '@/ui/components/form/Authorization';
 
 export default function SignIn() {
   const user = {
