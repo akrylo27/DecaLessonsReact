@@ -1,7 +1,4 @@
 import { useState } from 'react';
-import Input from '@/ui/components/Form/Input';
-import Checkbox from '@/ui/components/Form/Checkbox';
-import Button from '@/ui/components/Form/Button';
 import Link from 'next/link';
 import { fetchAPI } from '@/utils/api/fetch';
 import { useRouter } from 'next/router';
@@ -57,7 +54,7 @@ function Authorization(props) {
       <h2 className='form-header'>Войти</h2>
       <h2 className={'form-error'}>{error}</h2>
 
-      <Input
+      <input
         type={'text'}
         placeholder={'Введите имя *'}
         size={'xg'}
@@ -66,7 +63,7 @@ function Authorization(props) {
         onChange={handleChangeValue}
         required
       />
-      <Input
+      <input
         type={'password'}
         placeholder={'Пароль *'}
         size={'xg'}
@@ -75,7 +72,7 @@ function Authorization(props) {
         onChange={handleChangePassword}
         required
       />
-      <Checkbox
+      <input
         type={'checkbox'}
         color={'info'}
         checked={checked}
@@ -83,13 +80,15 @@ function Authorization(props) {
         size={'md'}
         text={'Запомнить меня'}
       />
-      <Button
+      <button
         type={'submit'}
         color={'primary'}
         size={'lg'}
         variant={'outlined'}
         text={'Войти'}
-      />
+      >
+        Войти
+      </button>
       <div className='forget-password'>
         <span>
           <a href='#'>Забыли пароль?</a>
