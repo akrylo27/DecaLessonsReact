@@ -1,4 +1,4 @@
-import React from 'react';
+import styles from './Input.module.scss'
 
 function Input({
   type,
@@ -14,6 +14,7 @@ function Input({
     <div>
       <input
         type={type}
+        className={styles.input}
         placeholder={placeholder}
         value={value}
         onChange={onChange}

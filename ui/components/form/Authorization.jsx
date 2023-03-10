@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Input from './Input/Input';
+import Input from './Input';
 import Checkbox from './Checkbox';
 import Button from './Button';
 import Link from 'next/link';
