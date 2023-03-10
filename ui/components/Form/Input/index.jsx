@@ -1,4 +1,4 @@
-import React from 'react';
+import styles from './Input.module.scss'
 
 function Input({
   type,
@@ -8,16 +8,14 @@ function Input({
   variant,
   value,
   onChange,
-  border,
-  cursor,
   ...props
 }) {
   return (
     <div>
       <input
         type={type}
+        className={styles.input}
         placeholder={placeholder}
-        className={`input input-color_${color} input-size_${size} input-variant_${variant} input-border_${border} input-cursor_${cursor}`}
         value={value}
         onChange={onChange}
         {...props}

@@ -1,37 +1,89 @@
-import React, { useState } from 'react';
-import Input from './Input';
-import Checkbox from './Checkbox';
-import Button from './Button';
-import Link from 'next/link';
+import { useState } from 'react';
+import Input from '@/ui/components/Form/Input';
+import Checkbox from '@/ui/components/Form/Checkbox';
+import Button from '@/ui/components/Form/Button';
 
-function Authorization(props) {
-  const [isValue, setIsValue] = useState('');
+import styles from './Registration.module.scss';
+
+function Registration(props) {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [checked, setChecked] = useState(false);
+
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 
   const handleChangeValue = (event) => {
     console.log(event.target.value);
-    setIsValue(event.target.value);
+    setName(event.target.value);
+  };
+
+  const handleChangeEmail = (event) => {
+    setEmail(event.target.value);
   };
   const handleChangePassword = (event) => {
     console.log(event.target.value);
     setPassword(event.target.value);
   };
 
+  const handleConfirmPassword = (event) => {
+    setConfirmPassword(event.target.value);
+  };
+
   const handleChecked = (event) => {
     console.log(event.target.value);
     setChecked(!checked);
   };
+
+  const regs = (e) => {
+    e.preventDefault();
+
+    const parms = {
+      username: name,
+      email: email,
+      password: password,
+    };
+
+    fetch(`${API_URL}/auth/local/register`, {
+      method: 'post',
+      headers: {
+        Authorization: `Bearer ${API_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(parms),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+
+        throw new Error('Данные не отправлены');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
-    <form className={'form-wrapper'}>
-      <h2 className='form-header'>Войти</h2>
+    <form className={styles.form_wrapper} onSubmit={regs}>
+      <h2 className={styles.form_header}>Регистрация</h2>
       <Input
         type={'text'}
         placeholder={'Введите имя *'}
         size={'xg'}
         variant={'outlined'}
-        value={isValue}
+        value={name}
         onChange={handleChangeValue}
+      />
+      <Input
+        type={'text'}
+        placeholder={'Введите email *'}
+        size={'xg'}
+        variant={'outlined'}
+        value={email}
+        onChange={handleChangeEmail}
       />
       <Input
         type={'password'}
@@ -41,30 +93,30 @@ function Authorization(props) {
         value={password}
         onChange={handleChangePassword}
       />
+      <Input
+        type={'password'}
+        placeholder={'Подтвердите пароль *'}
+        size={'xg'}
+        variant={'outlined'}
+        value={confirmPassword}
+        onChange={handleConfirmPassword}
+      />
       <Checkbox
         type={'checkbox'}
         color={'info'}
         checked={checked}
         onChange={handleChecked}
         size={'md'}
-        text={'Запомнить меня'}
+        text={'Подтверждаю обработку персональных данных'}
       />
       <Button
         type={'submit'}
         color={'primary'}
         size={'lg'}
         variant={'outlined'}
-        text={'Войти'}
+        text={'Зарегистрироваться'}
       />
-      <div className='forget-password'>
-        <span>
-          <a href='#'>Забыли пароль?</a>
-        </span>
-        <p>
-          Нет аккаунта?
-          <Link href='/signup'>Зарегистрироваться</Link>
-        </p>
-      </div>
+
       <>
         {/* Шаблоны */}
         {/* Input */}
@@ -141,4 +193,4 @@ function Authorization(props) {
   );
 }
 
-export default Authorization;
+export default Registration;

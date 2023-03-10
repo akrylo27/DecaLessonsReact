@@ -1,17 +1,22 @@
+// Light theme
 :root {
   --foreground-rgb: 0, 0, 0;
   --player-color-one: #FF5D0F;
   --player-color-one-light: #fff4ee;
   --player-color-two: #FF9C0F;
 
-  --button-color-default: #171717;
+  --button-color-default: #ccc;
   --button-color-orange: #FF5D0F;
-  --button-color-grey: rgba(170, 170, 170, 0.7)
+  --button-color-grey: rgba(170, 170, 170, 0.7);
+  --preloader: #000;
 }
 
+// Dark theme
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
+    --button-color-default: #171717;
+    --preloader: #fff;
   }
 }
 

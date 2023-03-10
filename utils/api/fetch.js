@@ -1,23 +1,36 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 
-const fetchAPI = async (url, request) => {
+const fetchAPI = async (url, request, parms = null) => {
   try {
     switch (request) {
       case 'get':
-        const response = await fetch(`${API_URL}/${url}`, {
-          method: request,
+        const getResponse = await fetch(`${API_URL}/${url}`, {
+          method: 'get',
           headers: {
             Authorization: `Bearer ${API_TOKEN}`,
           },
         });
-        return response;
-      case 'post':
-        console.log('post');
-        break;
+        return getResponse;
+      case 'POST':
+        console.log(parms);
+        const postResponse = await fetch(`${API_URL}/${url}`, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(parms),
+        });
+        return postResponse;
       default:
-        console.log('get');
-        break;
+        const defResponse = await fetch(`${API_URL}/${url}`, {
+          method: 'get',
+          headers: {
+            Authorization: `Bearer ${API_TOKEN}`,
+          },
+        });
+        return defResponse;
     }
   } catch (error) {
     console.log(error);

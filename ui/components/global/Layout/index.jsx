@@ -1,10 +1,12 @@
 import Header from '@/ui/components/global/Header';
 import Player from '@/ui/components/global/Player';
-import { useEffect, useState } from 'react';
 
 export default function Layout({ children }) {
+<<<<<<< HEAD
   const [music, setMusic] = useState([]);
 
+=======
+>>>>>>> master
   const track = {
     id: 1,
     author: 'Marin Garrix & Calvin Sparks',
@@ -12,6 +14,7 @@ export default function Layout({ children }) {
     src: '/audio/martin.mp3',
   };
 
+<<<<<<< HEAD
   const apiUrl = 'https://api.dless.ru/api';
   const token =
     '0690a355926f5ca9ec06ec6ab069eb4df4ff314b45a3106d54658e956482374a3f6df9b1725dcc385c923c551283eb55975fdac143b9910b7f7a33fd3c1ac315d8f2845a8f84010f1ff519a896cee80e03d8173cf96a50eefd0eb4d26a13bb358f9cb18b80139fe0219cb1368dcb5b75d3471a34f85a51b5097a71ab313dc285';
@@ -91,5 +94,14 @@ export default function Layout({ children }) {
         <Player track={track} />
       </div>
     </>
+=======
+  return (
+    <div>
+      <Header />
+      {children}
+
+      <Player track={track} />
+    </div>
+>>>>>>> master
   );
 }

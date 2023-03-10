@@ -1,0 +1,18 @@
+.navMain {
+  display: flex;
+  &_list {
+    display: flex;
+    list-style-type: none;
+  }
+  &_item {
+    padding: 0 18px;
+    span {
+      cursor: pointer;
+    }
+  }
+  &_link {
+    a {
+      margin: 0 10px 0 0;
+    }
+  }
+}
