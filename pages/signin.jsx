@@ -1,5 +1,9 @@
 import Authorization from '@/ui/components/Form/Authorization';
 
 export default function SignIn() {
-  return <Authorization />
+  return (
+    <div className='container'>
+      <Authorization />
+    </div>
+  )
 }
