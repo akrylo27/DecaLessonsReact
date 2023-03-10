@@ -60,7 +60,91 @@
 }
 
 //*Свойства инпутов
+.input[type='text'],
+.input[type='password'],
+.input[type='email'] {
+  display: flex;
+  margin: 20px 0;
+  padding: 10px;
+  font-size: 20px;
+  color: var(--form-color-one-light);
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--form-color-one);
+  filter: contrast(50%);
+  box-sizing: border-box;
+  &:hover,
+  &:focus {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--form-color-one);
+    transition: all 0.5s;
+    filter: contrast(100%);
+  }
+  &:active {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--form-color-one);
+    filter: contrast(150%);
+  }
+}
 
+.input::placeholder {
+  color: rgb(215, 215, 215);
+}
+
+.input-color {
+  &_success {
+    color: var(--form-color-green);
+  }
+  &_primary {
+    color: var(--form-color-blue);
+  }
+  &_info {
+    color: var(--form-color-grey);
+  }
+  &_warning {
+    color: var(--form-color-red);
+  }
+}
+
+.input-variant {
+  &_outlined {
+    background: transparent;
+  }
+}
+.input-size {
+  &_xs {
+    width: 50px;
+    height: 10px;
+    font-size: 10px;
+    border: 2px solid;
+  }
+  &_sm {
+    width: 100px;
+    height: 15px;
+    font-size: 10px;
+    border: 2px solid;
+  }
+  &_md {
+    width: 125px;
+    height: 20px;
+    font-size: 10px;
+    border: 2px solid;
+  }
+  &_lg {
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+    border: 2px solid;
+  }
+  &_xg {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    border: 1px solid;
+  }
+}
 //*Checkbox
 .checkbox-wrapper {
   display: flex;
@@ -191,12 +275,5 @@
   p a {
     cursor: pointer;
     padding-left: 5px;
-  }
-}
-
-//временный класс, потом надо удалить
-.nav-wrapper {
-  :first-child {
-    margin: 0 10px;
   }
 }
