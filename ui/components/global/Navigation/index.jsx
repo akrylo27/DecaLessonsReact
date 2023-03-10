@@ -36,10 +36,6 @@ export default function Navigation(props) {
           </li>
         </ul>
       </nav>
-      <div className={styles.navMain_link}>
-        <Link href='/signin'>Войти</Link>
-        <Link href='/signup'>Регистрация</Link>
-      </div>
     </>
   );
 }
