@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Button({ type, color, size, variant, text }) {
   return (
     <div>

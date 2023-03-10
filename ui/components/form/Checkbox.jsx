@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Checkbox({ type, checked, onChange, size, text }) {
   return (
     <div className='checkbox-wrapper'>
