@@ -10,7 +10,7 @@ export default function Header() {
 
   useEffect(() => {
     setSevedJWT(JSON.parse(localStorage.getItem('jwt')));
-  }, []);
+  });
   return (
     <>
       <header className={styles.header}>
@@ -23,8 +23,8 @@ export default function Header() {
                 <Link href='/profile'>Профиль</Link>
               ) : (
                 <>
-                  <Link href='/signin'>Войти</Link>
-                  <Link href='/signup'>Регистрация</Link>
+                  <Link href='/signin'>Войти </Link>
+                  <Link href='/signup'>Регистрация </Link>
                 </>
               )}
             </nav>
