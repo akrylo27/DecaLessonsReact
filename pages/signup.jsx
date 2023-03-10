@@ -1,10 +1,11 @@
-import Registration from '@/ui/components/Form/Registration/Registration';
+// import Registration from '@/ui/components/Form/Registration/Registration';
 
 export default function SignUp() {
   return (
     <>
       <div className='container'>
-        <Registration />
+        {/* <Registration /> */}
+        reg
       </div>
     </>
   );
