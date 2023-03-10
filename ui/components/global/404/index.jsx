@@ -7,18 +7,16 @@ function NotFound(props) {
     <div>
       <div className={styles.notFoundWrapper}>
         <h1>404 - Страница не найдена</h1>
-        <p>Страница, на которую Вы хотели перейти, не найдена.</p>
-        <br />
-        <p>Возможно, введён некорректный адрес или страница была удалена.</p>
+        <p>Страница не существует или произошла ошибка</p>
         <ul className={styles.linkList}>
           <li className={styles.linkList_item}>
-            <a href='http://'>Предыдущая страница</a>
+            <a href='http://'>Главная</a>
           </li>
           <li className={styles.linkList_item}>
-            <a href='http://'>Перейти на главную</a>
+            <a href='http://'>Музыка</a>
           </li>
           <li className={styles.linkList_item}>
-            <a href='http://'>Служба поддержки</a>
+            <a href='http://'>Личный кабинет</a>
           </li>
         </ul>
       </div>

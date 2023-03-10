@@ -1,5 +1,6 @@
 import Header from '@/ui/components/global/Header';
 import Player from '@/ui/components/global/Player';
+import Preloader from '@/ui/components/global/Preloader'
 
 export default function Layout({ children }) {
   const track = {
@@ -13,6 +14,11 @@ export default function Layout({ children }) {
     <div>
       <Header />
       {children}
+
+      <div className='container'>
+        <Preloader />
+      </div>
+
       <Player track={track} />
     </div>
   );
