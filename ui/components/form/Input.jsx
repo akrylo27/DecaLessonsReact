@@ -1,6 +1,15 @@
 import React from 'react';
 
-function Input({ type, placeholder, size, color, variant, value, onChange }) {
+function Input({
+  type,
+  placeholder,
+  size,
+  color,
+  variant,
+  value,
+  onChange,
+  ...props
+}) {
   return (
     <div>
       <input
@@ -9,6 +18,7 @@ function Input({ type, placeholder, size, color, variant, value, onChange }) {
         className={`input input-color_${color} input-size_${size} input-variant_${variant}`}
         value={value}
         onChange={onChange}
+        {...props}
       />
     </div>
   );

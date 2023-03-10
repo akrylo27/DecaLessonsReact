@@ -3,43 +3,79 @@ import Input from './Input';
 import Checkbox from './Checkbox';
 import Button from './Button';
 import Link from 'next/link';
+import { fetchAPI } from '@/utils/api/fetch';
+import { useRouter } from 'next/router';
 
 function Authorization(props) {
-  const [isValue, setIsValue] = useState('');
-  const [password, setPassword] = useState('');
+  const [isIdentifier, setisIdentifier] = useState('');
+  const [isPassword, setIsPassword] = useState('');
   const [checked, setChecked] = useState(false);
-
+  const [error, setError] = useState('');
+  const router = useRouter();
   const handleChangeValue = (event) => {
-    console.log(event.target.value);
-    setIsValue(event.target.value);
+    setisIdentifier(event.target.value);
   };
   const handleChangePassword = (event) => {
-    console.log(event.target.value);
-    setPassword(event.target.value);
+    setIsPassword(event.target.value);
   };
 
   const handleChecked = (event) => {
-    console.log(event.target.value);
     setChecked(!checked);
   };
+
+  const auth = (e) => {
+    e.preventDefault();
+
+    const parms = {
+      // identifier: 'test@gmail.com',
+      // password: 'Test12345',
+      identifier: isIdentifier,
+      password: isPassword,
+    };
+
+    fetchAPI(`auth/local`, 'POST', parms)
+      .then(async (response) => {
+        const { error, jwt, user } = await response.json();
+        if (error) {
+          setError(error.message);
+          console.log(error.message);
+        } else if (response.ok) {
+          const savedJWT = JSON.parse(localStorage.getItem('jwt'));
+          if (savedJWT == null) {
+            localStorage.setItem('jwt', JSON.stringify(jwt));
+            router.push('/');
+          } else {
+            setError('JWT have alredy saved');
+            console.log('JWT have alredy saved');
+          }
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
-    <form className={'form-wrapper'}>
+    <form className={'form-wrapper'} onSubmit={auth}>
       <h2 className='form-header'>Войти</h2>
+      <h2 className={'form-error'}>{error}</h2>
+
       <Input
         type={'text'}
         placeholder={'Введите имя *'}
         size={'xg'}
         variant={'outlined'}
-        value={isValue}
+        value={isIdentifier}
         onChange={handleChangeValue}
+        required
       />
       <Input
         type={'password'}
         placeholder={'Пароль *'}
         size={'xg'}
         variant={'outlined'}
-        value={password}
+        value={isPassword}
         onChange={handleChangePassword}
+        required
       />
       <Checkbox
         type={'checkbox'}

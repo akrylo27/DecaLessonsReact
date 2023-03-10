@@ -12,16 +12,17 @@ const fetchAPI = async (url, request, parms = null) => {
           },
         });
         return getResponse;
-      case 'post':
-        await fetch(`${API_URL}/${url}`, {
-          method: 'post',
+      case 'POST':
+        console.log(parms);
+        const postResponse = await fetch(`${API_URL}/${url}`, {
+          method: 'POST',
           headers: {
-            Authorization: `Bearer ${API_TOKEN}`,
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify(parms),
         });
-        console.log(parms);
-        break;
+        return postResponse;
       default:
         const defResponse = await fetch(`${API_URL}/${url}`, {
           method: 'get',
