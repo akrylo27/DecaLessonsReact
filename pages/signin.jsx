@@ -1,12 +1,18 @@
-import Registration from '@/ui/components/form/Registration/Registration';
-import Authorization from '@/ui/components/form/Authorization';
+// import Registration from '@/ui/components/form/Registration/Registration';
+// import Authorization from '@/ui/components/form/Authorization';
 
 export default function SignIn() {
-  const user = {
-    name: '',
-    password: '',
-    email: true,
-  };
+  // const user = {
+  //   name: '',
+  //   password: '',
+  //   email: true,
+  // };
 
-  return user.email ? <Authorization /> : <Registration />;
+  // return user.email ? <Authorization /> : <Registration />;
+
+  return (
+    <>
+      sign in
+    </>
+  )
 }
