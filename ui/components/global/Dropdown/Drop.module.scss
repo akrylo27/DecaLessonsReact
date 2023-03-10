@@ -1,0 +1,53 @@
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --player-color-one: #ff5d0f;
+  --player-color-one-light: #fff4ee;
+  --player-color-two: #ff9c0f;
+
+  --button-color-default: #171717;
+  --button-color-orange: #ff5d0f;
+  --button-color-grey: rgba(170, 170, 170, 0.7);
+} */
+
+.dropWrapper {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  z-index: 99;
+  background: var(--button-color-default);
+}
+
+.dropTitle {
+  &_list {
+    margin: 30px 160px 0;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  &_item {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.dropList {
+  &_item {
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    a {
+      cursor: pointer;
+      margin: 20px 0 0 0;
+    }
+  }
+  &_position {
+    display: flex;
+    justify-content: space-between;
+  }
+}
