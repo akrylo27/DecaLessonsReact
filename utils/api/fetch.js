@@ -5,7 +5,7 @@ const fetchAPI = async (url, request, parms = null) => {
   try {
     switch (request) {
       case 'get':
-        const getResponse = await fetch(`${API_URL}/${url}`, {
+        const getResponse = await fetch(`${API_URL}/api${url}`, {
           method: 'get',
           headers: {
             Authorization: `Bearer ${API_TOKEN}`,
@@ -14,7 +14,7 @@ const fetchAPI = async (url, request, parms = null) => {
         return getResponse;
       case 'POST':
         console.log(parms);
-        const postResponse = await fetch(`${API_URL}/${url}`, {
+        const postResponse = await fetch(`${API_URL}/api${url}`, {
           method: 'POST',
           headers: {
             Accept: 'application/json',
@@ -24,7 +24,7 @@ const fetchAPI = async (url, request, parms = null) => {
         });
         return postResponse;
       default:
-        const defResponse = await fetch(`${API_URL}/${url}`, {
+        const defResponse = await fetch(`${API_URL}/api${url}`, {
           method: 'get',
           headers: {
             Authorization: `Bearer ${API_TOKEN}`,

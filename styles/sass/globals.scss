@@ -48,6 +48,23 @@ a {
   padding: 0 10px;
 }
 
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  li {
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: 10px 0;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+      background: rgba(0,0,0,.02);
+    }
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

@@ -1,6 +1,31 @@
 import Head from 'next/head';
+import { fetchAPI } from '@/utils/api/fetch'
+import Player from '@/ui/components/global/Player';
+import { useState } from 'react';
 
-export default function Home() {
+export const getStaticProps = async () => {
+  const response = await fetchAPI('/audios')
+  const audios = await response.json()
+
+  return {
+    props: { audios }
+  }
+}
+
+export default function Home({ audios }) {
+  const attr = audios?.data[3]
+  const [track, setTrack] = useState({
+    id: attr?.id,
+    ...attr?.attributes
+  })
+
+  const addTrack = (id, attributes) => {
+    setTrack({
+      id,
+      ...attributes
+    })
+  }
+
   return (
     <>
       <Head>
@@ -9,6 +34,18 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+
+      <div className='container'>
+        <ul className='list'>
+          { audios && audios?.data.map(({ id, attributes }) => (
+            <li key={id} onClick={() => addTrack(id, attributes)}>
+              <strong>{attributes.author}</strong> - {attributes.name}
+            </li>
+          )) }
+        </ul>
+      </div>
+
+      {attr && <Player track={track} nx={track.id} />}
     </>
   );
 }
