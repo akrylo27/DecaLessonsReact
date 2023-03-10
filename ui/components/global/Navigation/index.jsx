@@ -3,12 +3,13 @@ import Link from 'next/link';
 import Drops from '../Dropdown';
 
 import styles from '@/ui/components/global/Navigation/Navigation.module.scss';
+import Search from '../Search/Search';
 
 export default function Navigation(props) {
   const [show, setShow] = useState(false);
-
+  const [showSearch, setShowSearch] = useState(false);
   const musicLists = show && <Drops />;
-
+  const searchInput = showSearch && <Search />;
   return (
     <>
       <nav className={styles.navMain}>
@@ -32,8 +33,13 @@ export default function Navigation(props) {
             <span>My playlists</span>
           </li>
           <li className={styles.navMain_item}>
-            <span>Download</span>
+            <span
+              className='fa-solid fa-magnifying-glass'
+              onClick={() => {
+                setShowSearch(!showSearch);
+              }}></span>
           </li>
+          <li className={styles.navMain_item}>{searchInput}</li>
         </ul>
       </nav>
     </>

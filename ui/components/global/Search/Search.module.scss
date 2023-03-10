@@ -2,22 +2,21 @@
   display: flex;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  &_line{
-    display: none;
-  }
-
-
   input[type="text"] {
     border-radius: 10px;
     background: none;
     border: none;
     margin: 0;
     padding: 10px;
-    height: 30px;
+    min-height: 0;
+    height: 10px;
+    font-size: inherit;
+    width: inherit;
   }
 
   .live {
     position: absolute;
+    top: 50px;
     .item {
       background-color: rgba(255, 255, 255, 0.1);
       margin-bottom: 5px;

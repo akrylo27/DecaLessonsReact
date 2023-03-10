@@ -17,10 +17,6 @@ const Search = () => {
     setinputValue(e.target.value);
   };
 
-  const handleClickFilter = (value) => {
-    setinputValue(value);
-  };
-
   const getSearch = () => {
     fetchAPI(`audios?${SearchByAuthor(inputValue)}`, 'get').then(
       async (response) => {
@@ -44,58 +40,37 @@ const Search = () => {
   }, [inputValue]);
 
   return (
-    <div className={styles.search}>
-      <button>+</button>
-      <div className={styles.search_line}>
-        <Input
-          type={'text'}
-          placeholder={'Трек, Артист...'}
-          size={'xg'}
-          variant={'dark'}
-          value={inputValue}
-          onChange={handleChangeFilter}
-          id={'search'}
-        />
-      </div>
+    <>
+      <div className={styles.search}>
+        <div className={styles.search_line}>
+          <Input
+            type={'text'}
+            placeholder={'Трек, Артист...'}
+            size={'sm'}
+            variant={'dark'}
+            value={inputValue}
+            onChange={handleChangeFilter}
+            id={'search'}
+          />
+        </div>
 
-      <div className={styles.live}>
-        {searchAudio.attributes ? '' : ''}
-        {searchAudio.map((audio) => (
-          <div className={styles.item} key={audio.id}>
-            <div className={styles.author}>
-              <Input
-                onClick={() => handleClickFilter(`${audio.attributes.author}`)}
-                value={`${audio.attributes.author} `}
-                type={'text'}
-                size={'xg'}
-                variant={'dark'}
-                cursor={'pointer'}
-                readOnly
-              />
+        <div className={styles.live}>
+          {searchAudio.map((audio) => (
+            <div className={styles.item} key={audio.id}>
+              <div className={styles.author}>
+                <Input
+                  value={`${audio.attributes.author} - ${audio.attributes.name} `}
+                  type={'text'}
+                  variant={'dark'}
+                  cursor={'pointer'}
+                  readOnly
+                />
+              </div>
             </div>
-          </div>
-        ))}
-        {searchAudio.map((audio) => (
-          <div className={styles.item} key={audio.id}>
-            <div className={styles.author}>
-              <Input
-                onClick={() =>
-                  handleClickFilter(
-                    `${audio.attributes.author} - ${audio.attributes.name}`
-                  )
-                }
-                value={`${audio.attributes.author} - ${audio.attributes.name} `}
-                type={'text'}
-                size={'xg'}
-                variant={'dark'}
-                cursor={'pointer'}
-                readOnly
-              />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
