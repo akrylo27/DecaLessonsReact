@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --form-color-green: #1a7d36;
   --form-color-blue: #3728be;
   --form-color-grey: #353535;
@@ -7,46 +7,22 @@
   --form-color-one: #ff5d0f;
   --form-color-one-light: #fff4ee;
   --form-color-two: #ff9c0f;
-}
-
-//*Закрыть форму
-/* .form-close {
-  &_one,
-  &_two {
-    position: absolute;
-    top: 20px;
-    right: 10px;
-    border: 1.5px solid var(--player-color-one-light);
-    width: 20px;
-    transform: rotate(45deg);
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  &_two {
-    transform: rotate(-45deg);
-  }
 } */
 
-//* Свойства формы
-.form-header {
-  text-align: center;
-  font-size: 40px;
-}
-.form-error{
-  margin-top: 10px; 
-  text-align: center;
-  font-size: 20px;
-  color: red
-}
-
-.form-wrapper {
-  margin: 5rem auto;
-  padding: 30px 20px;
-  max-width: 500px;
-  min-height: 400px;
-  background: rgba(64, 64, 64, 0.241);
-  border-radius: 4px;
-  border: 2px solid var(--form-color-two);
+.form {
+  &_wrapper {
+    margin: 5rem auto;
+    padding: 30px 20px;
+    max-width: 500px;
+    min-height: 400px;
+    background: rgba(64, 64, 64, 0.241);
+    border-radius: 4px;
+    border: 2px solid var(--form-color-two);
+  }
+  &_header {
+    text-align: center;
+    font-size: 40px;
+  }
 }
 
 //*Свойства лейбла
