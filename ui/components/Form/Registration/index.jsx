@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Input from '../Input/Input';
-import Checkbox from '../Checkbox';
-import Button from '../Button';
+import { useState } from 'react';
+import Input from '@/ui/components/Form/Input';
+import Checkbox from '@/ui/components/Form/Checkbox';
+import Button from '@/ui/components/Form/Button';
 
-import styles from '@/ui/components/Form/Registration/Registration.module.scss';
+import styles from './Registration.module.scss';
 
 function Registration(props) {
   const [name, setName] = useState('');
