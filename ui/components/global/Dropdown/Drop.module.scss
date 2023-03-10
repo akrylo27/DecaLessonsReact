@@ -10,6 +10,8 @@
 } */
 
 .dropWrapper {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   left: 0;
   margin: 0 auto;
@@ -21,8 +23,7 @@
 
 .dropTitle {
   &_list {
-    margin: 20px 0 0 0;
-    padding: 0 160px;
+    margin: 30px 160px 0;
     font-size: 20px;
     display: flex;
     justify-content: space-between;
@@ -30,6 +31,7 @@
   }
   &_item {
     display: flex;
+    flex-direction: column;
   }
 }
 
@@ -38,9 +40,14 @@
     margin: 10px auto;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     a {
       cursor: pointer;
       margin: 20px 0 0 0;
     }
+  }
+  &_position {
+    display: flex;
+    justify-content: space-between;
   }
 }

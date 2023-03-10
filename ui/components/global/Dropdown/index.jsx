@@ -40,14 +40,16 @@ export default function Drops() {
   });
 
   return (
-    <div className={styles.dropWrapper}>
-      <div className={styles.dropTitle_list}>{selectMusic}</div>
-      <div className={styles.dropTitle_item}>
-        <div className={styles.dropList_item}>{selectBests}</div>
-        <div className={styles.dropList_item}>{selectGenres}</div>
-        <div className={styles.dropList_item}>{selectCategories}</div>
-        <div className={styles.dropList_item}>{selectTops}</div>
-      </div>
-    </div>
+    <section className={styles.dropWrapper}>
+      <ul className={styles.dropTitle_item}>
+        <li className={styles.dropTitle_list}>{selectMusic}</li>
+      </ul>
+      <ul className={styles.dropList_position}>
+        <li className={styles.dropList_item}>{selectBests}</li>
+        <li className={styles.dropList_item}>{selectGenres}</li>
+        <li className={styles.dropList_item}>{selectCategories}</li>
+        <li className={styles.dropList_item}>{selectTops}</li>
+      </ul>
+    </section>
   );
 }
