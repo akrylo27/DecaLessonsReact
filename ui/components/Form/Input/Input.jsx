@@ -15,7 +15,6 @@ function Input({
       <input
         type={type}
         placeholder={placeholder}
-        className={`input input-color_${color} input-size_${size} input-variant_${variant}`}
         value={value}
         onChange={onChange}
         {...props}
