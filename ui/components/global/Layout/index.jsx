@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 
 export default function Layout({ children }) {
   const [music, setMusic] = useState([]);
-
   const track = {
     id: 1,
     author: 'Marin Garrix & Calvin Sparks',
