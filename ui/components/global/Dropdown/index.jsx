@@ -1,7 +1,7 @@
 import Drop from './Drop';
 import Droplist from './Droplist';
 
-import styles from '@/ui/components/global/Dropdown/Drop.module.scss';
+import styles from './Drop.module.scss';
 
 export default function Drops() {
   const listMusics = ['BEST NEW TRACKS', 'Genres', 'Categories', 'Top-charts'];

@@ -1,24 +1,13 @@
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --player-color-one: #ff5d0f;
-  --player-color-one-light: #fff4ee;
-  --player-color-two: #ff9c0f;
-
-  --button-color-default: #171717;
-  --button-color-orange: #ff5d0f;
-  --button-color-grey: rgba(170, 170, 170, 0.7);
-} */
-
 .dropWrapper {
   display: flex;
   flex-direction: column;
-  position: fixed;
+  margin-top: 10px;
+  position: absolute;
   left: 0;
-  margin: 0 auto;
-  width: 100%;
-  height: auto;
+  right: 0;
   z-index: 99;
   background: var(--button-color-default);
+  padding: 20px;
 }
 
 .dropTitle {
