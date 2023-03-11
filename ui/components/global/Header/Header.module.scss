@@ -1,6 +1,12 @@
+.headerInfo {
+  background: linear-gradient(to left, var(--player-color-one), var(--player-color-two));
+  color: #fff;
+  padding: 7px 0;
+  font-size: 14px;
+}
+
 .header {
-  padding: 16px 0;
-  border-top: 1px solid var(--player-color-one);
+  padding: 14px 0;
   &__box {
     display: flex;
     align-items: center;

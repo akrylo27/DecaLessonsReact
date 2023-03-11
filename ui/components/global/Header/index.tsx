@@ -1,12 +1,14 @@
-import Link from 'next/link';
-import styles from './Header.module.scss';
-import Logo from '@/ui/components/global/Logo';
-import Navigation from '../Navigation';
-
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-export default function Header() {
+import Logo from '@/ui/components/global/Logo';
+import Navigation from '@/ui/components/global/Navigation';
+import AuthBadge from '@/ui/components/global/AuthBadge';
+
+import styles from './Header.module.scss';
+
+const Header = () => {
+  // Переделаем на cookie
   const [savedJWT, setSevedJWT] = useState('');
   const router = useRouter();
 
@@ -25,33 +27,23 @@ export default function Header() {
 
   return (
     <>
+      <div className={styles.headerInfo}>
+        <div className='container'>
+          Учебный проект стажеров decathlon
+        </div>
+      </div>
+
       <header className={styles.header}>
         <div className='container'>
           <div className={styles.header__box}>
             <Logo />
             <Navigation />
-            <nav className='nav-wrapper'>
-              {savedJWT ? (
-                <>
-                  <Link href='/profile'>Профиль </Link>
-                  <span
-                    className={styles.logout}
-                    onClick={() => {
-                      handleClickLogOut();
-                    }}>
-                    Выход
-                  </span>
-                </>
-              ) : (
-                <>
-                  <Link href='/signin'>Войти </Link>
-                  <Link href='/signup'>Регистрация </Link>
-                </>
-              )}
-            </nav>
+            <AuthBadge />
           </div>
         </div>
       </header>
     </>
   );
 }
+
+export default Header
