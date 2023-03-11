@@ -2,9 +2,9 @@ import Header from '@/ui/components/global/Header';
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <main>
       <Header />
       {children}
-    </div>
+    </main>
   );
 }
