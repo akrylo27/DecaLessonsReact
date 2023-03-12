@@ -17,8 +17,6 @@ export default function App({
   Component,
   pageProps: { session, ...pageProps }
 }) {
-  console.log( 'test', session )
-
   return (
     <SessionProvider session={session}>
       <div className={roboto.className}>
