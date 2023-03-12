@@ -1,13 +1,14 @@
 import Link from 'next/link';
-import { useSession } from "next-auth/react"
+import { useSession, signIn, signOut } from "next-auth/react"
 
 import styles from './AuthBadge.module.scss'
 
 const AuthBadge = () => {
-  const { data: session, status } = useSession()
+  const { data: session, status, data } = useSession()
 
   console.log('session', session)
   console.log('status', status)
+  console.log('jwt', data)
 
   return (
     <Link href={session ? '/profile' : '/signin'} className={styles.authBadge}>
