@@ -2,7 +2,39 @@ import Head from 'next/head';
 
 import Authorization from '@/ui/components/Form/Authorization';
 
+import { signIn, useSession } from "next-auth/react"
+import { useEffect, useState } from 'react';
+
 export default function SignIn() {
+  const { data: session, status } = useSession()
+  const [login, setLogin] = useState('')
+  const [passsword, setPassword] = useState('')
+
+  const changeLogin = (e) => {
+    setLogin(e.target.value)
+  }
+
+  const changePassword = (e) => {
+    setPassword(e.target.value)
+  }
+
+  const loginIn = (e) => {
+    signIn("credentials", {
+      identifier: login,
+      password: passsword,
+      callbackUrl: '/profile'
+    })
+
+    setLogin('')
+    setPassword('')
+  }
+
+  useEffect(() => {
+    if (session) {
+      handle()
+    }
+  }, [])
+
   return (
     <>
       <Head>
@@ -13,7 +45,13 @@ export default function SignIn() {
       </Head>
 
       <div className='container'>
-        <Authorization />
+        <input type="text" placeholder='login' value={login} onChange={changeLogin} />
+        <input type="password" placeholder='pass' value={passsword} onChange={changePassword} />
+        <button onClick={loginIn}>
+          Sign In
+        </button>
+
+        {/* <Authorization /> */}
       </div>
     </>
   )

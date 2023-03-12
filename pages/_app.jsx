@@ -1,4 +1,5 @@
 import { Roboto } from '@next/font/google'
+import { SessionProvider } from "next-auth/react"
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -12,12 +13,14 @@ import '@/styles/sass/Button.scss';
 
 import Layout from '../ui/components/global/Layout';
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps: { session, ...pageProps } }) {
   return (
-    <div className={roboto.className}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </div>
+    <SessionProvider session={session}>
+      <div className={roboto.className}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </div>
+    </SessionProvider>
   );
 }
