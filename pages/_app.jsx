@@ -13,7 +13,12 @@ import '@/styles/sass/Button.scss';
 
 import Layout from '../ui/components/global/Layout';
 
-export default function App({ Component, pageProps: { session, ...pageProps } }) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps }
+}) {
+  console.log( 'test', session )
+
   return (
     <SessionProvider session={session}>
       <div className={roboto.className}>

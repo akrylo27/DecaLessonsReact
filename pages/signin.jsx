@@ -21,8 +21,7 @@ export default function SignIn() {
   const loginIn = (e) => {
     signIn("credentials", {
       identifier: login,
-      password: passsword,
-      callbackUrl: '/profile'
+      password: passsword
     })
 
     setLogin('')
