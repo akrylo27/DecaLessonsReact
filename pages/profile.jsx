@@ -23,10 +23,7 @@ import { getServerSession } from "next-auth/next"
 //   }
 // }
 
-const profile = ({session}) => {
-
-  console.log('session', session)
-  
+const profile = ({session}) => {  
   const handle = () => {
     signOut({
       redirect: false

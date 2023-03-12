@@ -58,7 +58,4 @@ export const authOptions = {
   },
 }
 
-const Auth = (req, res) =>
-  NextAuth(req, res, authOptions);
-
-export default Auth;
+export default NextAuth(authOptions);
