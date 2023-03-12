@@ -1,6 +1,7 @@
 import { signOut } from "next-auth/react"
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next"
+import { useRouter } from "next/router";
 
 // export async function getServerSideProps({req, res}) {
 //   const session = await getServerSession(req, res, authOptions)
@@ -24,10 +25,14 @@ import { getServerSession } from "next-auth/next"
 // }
 
 const profile = ({session}) => {  
-  const handle = () => {
-    signOut({
-      redirect: false
-    })
+  const router = useRouter();
+
+  const handle = async () => {
+    const { url } = await signOut({redirect: false, callbackUrl: "/foo"})
+    
+    console.log( url, 'Неправильно работает, думаю )))' )
+    
+    router.push('/')
   }
 
   return (

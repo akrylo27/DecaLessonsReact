@@ -1,8 +1,11 @@
 import Head from 'next/head';
 import { signIn, useSession } from "next-auth/react"
 import { useEffect, useState } from 'react';
+import { useRouter } from "next/router";
 
 export default function SignIn() {
+  const router = useRouter();
+
   const { data: session, status } = useSession()
   const [login, setLogin] = useState('')
   const [passsword, setPassword] = useState('')
@@ -24,6 +27,8 @@ export default function SignIn() {
 
     setLogin('')
     setPassword('')
+
+    router.push('/profile')
   }
 
   useEffect(() => {
