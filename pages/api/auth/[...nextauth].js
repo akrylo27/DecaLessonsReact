@@ -40,14 +40,11 @@ export const authOptions = {
     jwt: true,
   },
 
-  secret: 'strapi',
-
   callbacks: {
     session: async ({ session, token }) => {
       session.id = token.id;
       session.jwt = token.jwt;
       session.user.username = token.username
-      session.blocked = token.blocked
       return Promise.resolve(session);
     },
     jwt: async ({ token, user }) => {
@@ -55,11 +52,13 @@ export const authOptions = {
         token.id = user.id;
         token.jwt = user.jwt;
         token.username = user.username
-        token.blocked = user.blocked
       }
       return Promise.resolve(token);
     },
   },
 }
 
-export default NextAuth(authOptions);;
+const Auth = (req, res) =>
+  NextAuth(req, res, authOptions);
+
+export default Auth;

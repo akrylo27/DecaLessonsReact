@@ -20,7 +20,6 @@ export default function SignIn() {
       identifier: login,
       password: passsword,
       redirect: false,
-      callbackUrl: '/profile'
     })
 
     setLogin('')
