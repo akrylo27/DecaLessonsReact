@@ -1,7 +1,4 @@
 import Head from 'next/head';
-
-import Authorization from '@/ui/components/Form/Authorization';
-
 import { signIn, useSession } from "next-auth/react"
 import { useEffect, useState } from 'react';
 
@@ -21,7 +18,9 @@ export default function SignIn() {
   const loginIn = (e) => {
     signIn("credentials", {
       identifier: login,
-      password: passsword
+      password: passsword,
+      redirect: false,
+      callbackUrl: '/profile'
     })
 
     setLogin('')
@@ -49,8 +48,6 @@ export default function SignIn() {
         <button onClick={loginIn}>
           Sign In
         </button>
-
-        {/* <Authorization /> */}
       </div>
     </>
   )

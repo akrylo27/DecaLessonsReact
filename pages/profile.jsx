@@ -1,9 +1,10 @@
-import React from 'react';
 import { signOut } from "next-auth/react"
 
 const profile = () => {
   const handle = () => {
-    signOut()
+    signOut({
+      redirect: false
+    })
   }
 
   return (
