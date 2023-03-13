@@ -18,7 +18,7 @@ const Search = () => {
   };
 
   const getSearch = () => {
-    fetchAPI(`audios?${SearchByAuthor(inputValue)}`, 'get').then(
+    fetchAPI(`/audios?${SearchByAuthor(inputValue)}`, 'get').then(
       async (response) => {
         const { data } = await response.json();
         console.log(data);
