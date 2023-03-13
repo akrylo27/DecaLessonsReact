@@ -9,6 +9,11 @@
   --button-color-orange: #FF5D0F;
   --button-color-grey: rgba(170, 170, 170, 0.7);
   --preloader: #000;
+
+
+
+
+  --search-default: rgba(0, 0, 0, .1);
 }
 
 // Dark theme
@@ -17,7 +22,8 @@
     --foreground-rgb: 255, 255, 255;
     --button-color-default: #171717;
     --preloader: #fff;
-  }
+    --search-default: rgba(255, 255, 255, .1);
+}
 }
 
 * {

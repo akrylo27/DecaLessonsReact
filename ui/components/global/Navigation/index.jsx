@@ -6,9 +6,7 @@ import Search from '../Search/Search';
 
 export default function Navigation(props) {
   const [show, setShow] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
   const musicLists = show && <Drops />;
-  const searchInput = showSearch && <Search />;
   return (
     <>
       <nav className={styles.navMain}>
@@ -31,14 +29,9 @@ export default function Navigation(props) {
           <li className={styles.navMain_item}>
             <span>My playlists</span>
           </li>
-          <li className={styles.navMain_item}>
-            <span
-              className='fa-solid fa-magnifying-glass'
-              onClick={() => {
-                setShowSearch(!showSearch);
-              }}></span>
-          </li>
-          <li className={styles.navMain_item}>{searchInput}</li>
+          <div className={styles.navMain_item_search}>
+            <Search />
+          </div>
         </ul>
       </nav>
     </>

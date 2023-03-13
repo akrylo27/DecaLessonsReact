@@ -1,24 +1,37 @@
 .search {
-  display: flex;
-  background-color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to left, var(--player-color-one), var(--player-color-two));
+  width: 500px;
   border-radius: 10px;
-  input[type="text"] {
-    border-radius: 10px;
+  display: flex;
+  &_bar {
     background: none;
-    border: none;
-    margin: 0;
-    padding: 10px;
-    min-height: 0;
-    height: 10px;
-    font-size: inherit;
-    width: inherit;
+    padding-left: 10px;
+    outline: none;
+    border: 0;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    color: white;
+    &::-webkit-input-placeholder{
+      color: white;
+    }
   }
 
-  .live {
+  &_live {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    top: 50px;
+    top: 70px;
+    border-radius: 10px;
+    max-height: 50vh;
+    background: linear-gradient(to left, var(--player-color-one), var(--player-color-two));
+    overflow-y: none;
+    overflow-y: auto;
     .item {
-      background-color: rgba(255, 255, 255, 0.1);
+      align-items: center;
+      display: flex;
+      height: 40px;
       margin-bottom: 5px;
       border-radius: 10px;
     }
