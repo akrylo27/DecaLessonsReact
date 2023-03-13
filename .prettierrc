@@ -4,5 +4,6 @@
   "singleQuote": true,
   "useTabs": false,
   "tabWidth": 2,
-  "scss.format.spaceAroundSelectorSeparator": true
+  "scss.format.spaceAroundSelectorSeparator": true,
+  "semi": true
 }

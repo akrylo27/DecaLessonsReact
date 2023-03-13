@@ -4,9 +4,18 @@ const SearchByAuthor = (input = null) => {
   const query = qs.stringify(
     {
       filters: {
-        author: {
-          $containsi: input,
-        },
+        $or: [
+          {
+            name: {
+              $containsi: input,
+            },
+          },
+          {
+            author: {
+              $containsi: input,
+            },
+          },
+        ],
       },
     },
     {
@@ -17,19 +26,3 @@ const SearchByAuthor = (input = null) => {
 };
 
 export { SearchByAuthor };
-
-// filters: {
-//         $or: [
-//           {
-//             name: {
-//               $containsi: input,
-//             },
-//           },
-//           {
-//             author: {
-//               $containsi: input,
-//             },
-//           },
-//         ],
-//       },
-//     }
