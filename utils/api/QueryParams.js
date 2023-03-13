@@ -16,7 +16,22 @@ const SearchByAuthor = (input = null) => {
   return query;
 };
 
-export { SearchByAuthor };
+const first10 = () => {
+  const query = qs.stringify(
+    {
+      pagination: {
+        page: 1,
+        pageSize: 10,
+      },
+    },
+    {
+      encodeValuesOnly: true, // prettify URL
+    }
+  );
+  return query;
+};
+
+export { SearchByAuthor, first10 };
 
 // filters: {
 //         $or: [
