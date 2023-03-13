@@ -51,7 +51,7 @@ function Authorization(props) {
   };
   return (
     <form className={'form-wrapper'} onSubmit={auth}>
-      <h2 className='form-header'>Войти</h2>
+      <h2 className='form-header'>Авторизация</h2>
       <h2 className={'form-error'}>{error}</h2>
 
       <input

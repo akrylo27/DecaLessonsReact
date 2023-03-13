@@ -1,36 +1,31 @@
-import Link from 'next/link';
-import styles from './Header.module.scss';
+import React from 'react';
+
 import Logo from '@/ui/components/global/Logo';
-import Navigation from '../Navigation';
+import Navigation from '@/ui/components/global/Navigation';
+import AuthBadge from '@/ui/components/global/AuthBadge';
 
-import { useEffect, useState } from 'react';
+import styles from './Header.module.scss';
 
-export default function Header() {
-  const [savedJWT, setSevedJWT] = useState('');
-
-  useEffect(() => {
-    setSevedJWT(JSON.parse(localStorage.getItem('jwt')));
-  });
+const Header = () => {
   return (
     <>
+      <div className={styles.headerInfo}>
+        <div className='container'>
+          Учебный проект стажеров decathlon
+        </div>
+      </div>
+
       <header className={styles.header}>
         <div className='container'>
           <div className={styles.header__box}>
             <Logo />
             <Navigation />
-            <nav className='nav-wrapper'>
-              {savedJWT ? (
-                <Link href='/profile'>Профиль</Link>
-              ) : (
-                <>
-                  <Link href='/signin'>Войти </Link>
-                  <Link href='/signup'>Регистрация </Link>
-                </>
-              )}
-            </nav>
+            <AuthBadge />
           </div>
         </div>
       </header>
     </>
   );
 }
+
+export default Header

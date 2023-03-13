@@ -3,7 +3,7 @@ import { AudioInit, AudioTime } from './audio'
 
 import styles from '@/ui/components/global/Player/Player.module.scss'
 
-export default function Player({ track }) {
+export default function Player({ track, nx }) {
   const [audio, setAudio] = useState(null);
   const [isPlay, setIsPlay] = useState(true);
   const [isPlayMove, setIsPlayMove] = useState(false);
@@ -11,12 +11,9 @@ export default function Player({ track }) {
   const [fullTime, setfullTime] = useState('00:00');
   const [currentTime, setCurrentTime] = useState('00:00');
   const [currentTimeMove, setCurrentTimeMove] = useState('00:00');
-  const [volume, setVolume] = useState(50);
+  const [volume, setVolume] = useState(70);
   const [volumeMove, setVolumeMove] = useState(false)
-
-  useEffect(() => {
-    setAudio(AudioInit(track.src));
-  }, []);
+  const [isNx, setIsNx] = useState(nx)
 
   const audioTimeUpdate = () => {
     audio.addEventListener('timeupdate', () => {
@@ -45,6 +42,17 @@ export default function Player({ track }) {
 
     audio.pause();
   };
+
+  if ( nx != isNx ) {
+    setIsNx(nx)
+    audio.currentTime = 0;
+    setIsPlay(true);
+    audio.pause();
+  }
+
+  useEffect(() => {
+    setAudio(AudioInit(track));
+  }, [track]);
 
   const rewind = (e, active) => {
     setIsPlayMove(active)

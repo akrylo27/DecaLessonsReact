@@ -1,9 +1,10 @@
 .logo {
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   transition: opacity .2s;
+  font-weight: bold;
   span {
     color: var(--player-color-one)
   }

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
 import Drops from '../Dropdown';
 
 import styles from '@/ui/components/global/Navigation/Navigation.module.scss';

@@ -177,3 +177,15 @@
     background: rgba(255,255,255,.2);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .playerBox {
+    &__body {
+      width: calc(100% - 45px);
+    }
+  }
+
+  .playerVolume {
+    display: none;
+  }
+}
