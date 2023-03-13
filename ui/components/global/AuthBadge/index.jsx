@@ -1,19 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession } from "next-auth/react"
 
 import styles from './AuthBadge.module.scss'
 
 const AuthBadge = () => {
-  const { data: session, status, data } = useSession()
+  const { data: session } = useSession()
 
   const customLoader = () => {
     return `https://api.dless.ru${session?.user?.image}`
   }
-
-  console.log('session', session)
-  console.log('status', status)
-  console.log('jwt', data)
 
   return (
     <Link href={session ? '/profile' : '/signin'} className={styles.authBadge}>

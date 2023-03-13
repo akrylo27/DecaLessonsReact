@@ -8,6 +8,8 @@
     color: rgba(0,0,0,.8)
   }
   &__ava {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
     width: 34px;
     height: 34px;
     margin-left: 12px;

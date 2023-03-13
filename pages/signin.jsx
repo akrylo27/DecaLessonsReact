@@ -1,10 +1,33 @@
 import Head from 'next/head';
 import { signIn, useSession } from "next-auth/react"
 import { useEffect, useState } from 'react';
+import { authOptions } from 'pages/api/auth/[...nextauth]'
+import { getServerSession } from "next-auth/next"
+import { useRouter } from 'next/router';
+
+export const getServerSideProps = async ({ req, res }) => {
+  const sessionServer = await getServerSession(req, res, authOptions)
+
+  if (sessionServer) {
+    return {
+      redirect: {
+        destination: '/profile',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      sessionServer
+    }
+  }
+}
 
 export default function SignIn() {
-  const { data: session, status } = useSession()
+  const { data: session } = useSession()
   const [login, setLogin] = useState('')
+  const router = useRouter()
   const [passsword, setPassword] = useState('')
 
   const changeLogin = (e) => {
@@ -15,8 +38,8 @@ export default function SignIn() {
     setPassword(e.target.value)
   }
 
-  const loginIn = (e) => {
-    signIn("credentials", {
+  const loginIn = async (e) => {
+    const { url } = await signIn("credentials", {
       identifier: login,
       password: passsword,
       redirect: false,
@@ -25,6 +48,8 @@ export default function SignIn() {
 
     setLogin('')
     setPassword('')
+
+    router.push(url)
   }
 
   useEffect(() => {
