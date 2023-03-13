@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import Input from '@/ui/components/form/Input';
 
-import { SearchByAuthor } from './SearchQuery';
+import { SearchByAuthor } from '../../../../utils/api/QueryParams';
 import { fetchAPI } from '@/utils/api/fetch';
 import { debounceFunc } from '@/utils/api/debounce';
 
