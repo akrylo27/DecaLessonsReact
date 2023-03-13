@@ -51,7 +51,7 @@ export default function Player({ track, nx }) {
   }
 
   useEffect(() => {
-    setAudio(AudioInit(track.path));
+    setAudio(AudioInit(track));
   }, [track]);
 
   const rewind = (e, active) => {
