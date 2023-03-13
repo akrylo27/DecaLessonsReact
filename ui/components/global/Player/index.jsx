@@ -11,7 +11,7 @@ export default function Player({ track, nx }) {
   const [fullTime, setfullTime] = useState('00:00');
   const [currentTime, setCurrentTime] = useState('00:00');
   const [currentTimeMove, setCurrentTimeMove] = useState('00:00');
-  const [volume, setVolume] = useState(50);
+  const [volume, setVolume] = useState(70);
   const [volumeMove, setVolumeMove] = useState(false)
   const [isNx, setIsNx] = useState(nx)
 
