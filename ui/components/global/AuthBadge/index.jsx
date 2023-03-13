@@ -13,7 +13,7 @@ const AuthBadge = () => {
   return (
     <Link href={session ? '/profile' : '/signin'} className={styles.authBadge}>
       <div className={styles.authBadge__name}>
-        {session ? session?.user?.username : 'Авторизация' }
+        {session ? session?.user?.name ? session?.user?.name : session?.user?.username : 'Авторизация' }
       </div>
       <div className={styles.authBadge__ava}></div>
     </Link>
