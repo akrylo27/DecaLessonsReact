@@ -28,11 +28,8 @@ const profile = ({session}) => {
   const router = useRouter();
 
   const handle = async () => {
-    const { url } = await signOut({redirect: false, callbackUrl: "/foo"})
-    
-    console.log( url, 'Неправильно работает, думаю )))' )
-    
-    router.push('/')
+    const { url } = await signOut({redirect: false, callbackUrl: "/"})
+    router.push(url)
   }
 
   return (

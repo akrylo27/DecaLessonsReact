@@ -45,6 +45,8 @@ export const authOptions = {
       session.id = token.id;
       session.jwt = token.jwt;
       session.user.username = token.username
+      session.user.name = token.name
+      session.user.image = token.image
       return Promise.resolve(session);
     },
     jwt: async ({ token, user }) => {
@@ -52,6 +54,8 @@ export const authOptions = {
         token.id = user.id;
         token.jwt = user.jwt;
         token.username = user.username
+        token.name = user.name
+        token.image = user.image
       }
       return Promise.resolve(token);
     },

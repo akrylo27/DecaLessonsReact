@@ -6,6 +6,8 @@ import styles from './AuthBadge.module.scss'
 const AuthBadge = () => {
   const { data: session } = useSession()
 
+  console.log('session', session)
+
   return (
     <Link href={session ? '/profile' : '/signin'} className={styles.authBadge}>
       <div className={styles.authBadge__name}>
