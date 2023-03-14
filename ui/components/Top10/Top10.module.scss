@@ -1,21 +1,56 @@
-.title{
+.title {
   text-align: center;
   font-size: 20px;
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: 2px;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
   font-weight: bold;
 
   span {
-    color: var(--player-color-one)
+    color: var(--player-color-one);
   }
 }
-.list{
+
+.list {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 20px;
   list-style: none;
-  &_item{
-    border: 1px solid black;
-    padding: 10px;
-    margin-bottom: 3px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+
+  &_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 10px;
+    font-size: 15px;
+    filter: contrast(70%);
+
+    &_music {
+      margin-left: 10px;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      flex-grow: 1;
+      .author {
+        color: var(--player-color-one);
+      }
+    }
+
+    &:hover {
+      filter: contrast(100%);
+      border: 1px solid var(--player-color-one);
+    }
+
+    .number {
+      font-size: 25px;
+    }
+    .options {
+      display: flex;
+    }
   }
 }

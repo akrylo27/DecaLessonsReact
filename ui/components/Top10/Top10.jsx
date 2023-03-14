@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { first10 } from '@/utils/api/QueryParams';
 import { fetchAPI } from '@/utils/api/fetch';
 import styles from '@/ui/components/Top10/Top10.module.scss';
-import { debounceFunc } from '@/utils/api/debounce';
 
 const Top10 = () => {
   const [audios, setAudios] = useState([]);
+
   const getTop10 = () => {
-    fetchAPI(`/audios?${first10}`, 'get').then(async (response) => {
+    fetchAPI(`/audios?${first10()}`, 'get').then(async (response) => {
       const { data } = await response.json();
       console.log(data);
       setAudios(data);
@@ -18,6 +18,7 @@ const Top10 = () => {
   useEffect(() => {
     getTop10();
   }, []);
+
   return (
     <>
       <div>
@@ -29,12 +30,19 @@ const Top10 = () => {
       <div>
         <ul className={styles.list}>
           {audios.map(({ id, attributes }) => (
-            <li
-              className={styles.list_item}
-              key={id}
-              onClick={() => addTrack(id, attributes)}>
-              <strong>{attributes.author}</strong> - {attributes.name}
-            </li>
+            <>
+              <div className={styles.list_item} key={id}>
+                <div className={styles.number}>{id}</div>
+
+                <div className={styles.list_item_music}>
+                  <div className={styles.author}>{attributes.author}</div>
+                  <div>{attributes.name}</div>
+                </div>
+                <div className={styles.options}>
+                  <i className='fa-regular fa-heart'></i>
+                </div>
+              </div>
+            </>
           ))}
         </ul>
       </div>

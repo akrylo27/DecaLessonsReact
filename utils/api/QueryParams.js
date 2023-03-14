@@ -17,7 +17,7 @@ const SearchByAuthor = (input = null) => {
 };
 
 const first10 = () => {
-  const query = qs.stringify(
+  const query1 = qs.stringify(
     {
       pagination: {
         page: 1,
@@ -28,7 +28,7 @@ const first10 = () => {
       encodeValuesOnly: true, // prettify URL
     }
   );
-  return query;
+  return query1;
 };
 
 export { SearchByAuthor, first10 };

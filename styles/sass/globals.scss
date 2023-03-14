@@ -48,13 +48,11 @@ a {
   &_main{
     width: 100%;
     display: flex;
-    background-color:rgba(170, 170, 170, 0.7);
     .container_left{
       flex-grow: 1;
     }
     .container_right{
       width: 30%;
-      
     }
   }
 }
