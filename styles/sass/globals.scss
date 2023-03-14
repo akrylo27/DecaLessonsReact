@@ -1,12 +1,12 @@
 // Light theme
 :root {
   --foreground-rgb: 0, 0, 0;
-  --player-color-one: #FF5D0F;
+  --player-color-one: #ff5d0f;
   --player-color-one-light: #fff4ee;
-  --player-color-two: #FF9C0F;
+  --player-color-two: #ff9c0f;
 
   --button-color-default: #ccc;
-  --button-color-orange: #FF5D0F;
+  --button-color-orange: #ff5d0f;
   --button-color-grey: rgba(170, 170, 170, 0.7);
   --preloader: #000;
 }
@@ -45,32 +45,32 @@ a {
   max-width: 1440px;
   margin: auto;
   padding: 0 10px;
-  &_main{
+  &_main {
     width: 100%;
     display: flex;
-    .container_left{
+    .container_left {
       flex-grow: 1;
+      width: 100%;
     }
-    .container_right{
-      width: 30%;
+    .container_right {
+      width: 60%;
     }
   }
 }
-
 
 .list {
   list-style: none;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border-bottom: 1px solid rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   li {
-    border-top: 1px solid rgba(0,0,0,.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding: 10px 0;
     cursor: pointer;
     user-select: none;
     &:hover {
-      background: rgba(0,0,0,.02);
+      background: rgba(0, 0, 0, 0.02);
     }
   }
 }
@@ -80,5 +80,3 @@ a {
     color-scheme: dark;
   }
 }
-
-

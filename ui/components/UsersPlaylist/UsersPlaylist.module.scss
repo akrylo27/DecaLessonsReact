@@ -1,0 +1,21 @@
+.title {
+  font-size: 20px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+
+  span {
+    color: var(--player-color-one);
+  }
+}
+.container_wrapper {
+  width: 100%;
+  margin-top: 20px;
+
+  .container_playlist {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}

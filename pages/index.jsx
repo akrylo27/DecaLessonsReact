@@ -3,7 +3,9 @@ import Script from 'next/script';
 import { fetchAPI } from '@/utils/api/fetch';
 import Player from '@/ui/components/global/Player';
 import { useState } from 'react';
+
 import Top10 from '@/ui/components/Top10/Top10';
+import UsersPlaylist from '@/ui/components/UsersPlaylist/UsersPlaylist';
 
 export const getServerSideProps = async () => {
   const response = await fetchAPI('/audios');
@@ -38,14 +40,16 @@ export default function Home({ audios }) {
       <div className='container'>
         <div className='container_main'>
           <div className='container_left'>
-            <ul className='list'>
+            <UsersPlaylist />
+
+            {/* <ul className='list'>
               {audios &&
                 audios?.data.map(({ id, attributes }) => (
                   <li key={id} onClick={() => addTrack(id, attributes)}>
                     <strong>{attributes.author}</strong> - {attributes.name}
                   </li>
                 ))}
-            </ul>
+            </ul> */}
           </div>
           <div className='container_right'>
             <Top10 audios={audios} />
