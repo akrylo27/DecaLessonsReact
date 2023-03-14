@@ -18,9 +18,15 @@ const Header = () => {
       <header className={styles.header}>
         <div className='container'>
           <div className={styles.header__box}>
-            <Logo />
-            <Navigation />
-            <AuthBadge />
+            <div className={styles.header__left}>
+              <Logo />
+            </div>
+            <div>
+              <Navigation />
+            </div>
+            <div className={styles.header__right}>
+              <AuthBadge />
+            </div>
           </div>
         </div>
       </header>
