@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { authOptions } from 'pages/api/auth/[...nextauth]'
 import { getServerSession } from "next-auth/next"
 import { useRouter } from 'next/router';
+import Link from 'next/link'
 
 export const getServerSideProps = async ({ req, res }) => {
   const sessionServer = await getServerSession(req, res, authOptions)
@@ -73,6 +74,13 @@ export default function SignIn() {
         <button onClick={loginIn}>
           Sign In
         </button>
+        
+        <div>
+          <br />
+          <Link href='/signup'>
+            Sign Up
+          </Link>
+        </div>
       </div>
     </>
   )
