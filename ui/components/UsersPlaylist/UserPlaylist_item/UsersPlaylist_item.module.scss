@@ -13,22 +13,31 @@
     width: 150px;
     height: 150px;
     object-fit: cover;
-    transition: all 0.5s;
     border-radius: 5px 5px 0 0;
   }
   .footer {
     margin: 0;
     padding: 5px;
+    transition: all 1s;
+
     .author {
       font-weight: bold;
       color: var(--player-color-one);
     }
     .options {
       opacity: 0;
-      &.activeOptions {
+      display: flex;
+      align-items: center;
+      transition: all 0.2s;
+      &:hover {
         opacity: 1;
       }
     }
+    // .activeOptions {
+    //   opacity: 1;
+    //   display: flex;
+    //   align-items: center;
+    // }
 
     .playerBox {
       height: 60px;

@@ -4,17 +4,9 @@ import Image from 'next/image';
 
 const UserPlaylist_item = ({ image, author, nameplaylist, id }) => {
   const [isPlay, setIsPlay] = useState(true);
-  const [isOptions, setIsOptions] = useState(false);
 
   return (
-    <div
-      className={styles.playlist_item}
-      onMouseOver={() => {
-        setIsOptions(true);
-      }}
-      onMouseLeave={() => {
-        setIsOptions(false);
-      }}>
+    <div className={styles.playlist_item}>
       <div className={styles.header}>
         <Image
           className={styles.image}
@@ -29,10 +21,7 @@ const UserPlaylist_item = ({ image, author, nameplaylist, id }) => {
           <span className={styles.author}>Author: {author}</span>
           <p className={styles.nameplaylist}>Playlist: {nameplaylist}</p>
         </div>
-        <div
-          className={
-            isOptions ? `${styles.activeOptions}` : `${styles.options}`
-          }>
+        <div className={styles.options}>
           <div
             className={`${styles.playerBox__play} ${
               !isPlay ? styles.active : ''
@@ -40,6 +29,7 @@ const UserPlaylist_item = ({ image, author, nameplaylist, id }) => {
             onClick={() => {
               setIsPlay(!isPlay);
             }}></div>
+          <i className='fa-regular fa-heart'></i>
         </div>
       </div>
     </div>

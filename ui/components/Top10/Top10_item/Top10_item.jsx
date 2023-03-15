@@ -13,7 +13,6 @@ const Top10_item = ({ id, attributes }) => {
         <div>{attributes.name}</div>
       </div>
       <div className={styles.options}>
-        <i className='fa-regular fa-heart'></i>
         <div
           className={`${styles.playerBox__play} ${
             !isPlay ? styles.active : ''
@@ -21,6 +20,7 @@ const Top10_item = ({ id, attributes }) => {
           onClick={() => {
             setIsPlay(!isPlay);
           }}></div>
+        <i className='fa-regular fa-heart'></i>
       </div>
     </div>
   );
